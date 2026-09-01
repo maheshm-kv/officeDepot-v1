@@ -112,6 +112,8 @@ describe("c-b2b-login-form", () => {
       errorMessage: null
     });
     await flushPromises();
+
+    expect(assignMock).toHaveBeenCalledWith("/home");
   });
 
   it("shows the authentication error label when login fails with AUTHENTICATION_ERROR", async () => {

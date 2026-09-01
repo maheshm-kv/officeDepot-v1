@@ -257,6 +257,21 @@ private class B2BLoginControllerTest {
   }
 
   @isTest
+  static void sanitizeStartUrlBlocksBackslashNormalizedProtocolRelativeUrl() {
+    // Browsers normalize '\' to '/' for special schemes (WHATWG URL spec),
+    // so '/\evil.com' would resolve as '//evil.com' if backslashes weren't
+    // rejected outright.
+    System.assertEquals(
+      null,
+      B2BLoginController.sanitizeStartUrl('/\\evil.com')
+    );
+    System.assertEquals(
+      null,
+      B2BLoginController.sanitizeStartUrl('/\\/evil.com')
+    );
+  }
+
+  @isTest
   static void loginWithMaliciousStartUrlDoesNotReachAdapterUnsanitized() {
     CapturingAdapter adapter = new CapturingAdapter();
     B2BLoginController.adapterOverride = adapter;

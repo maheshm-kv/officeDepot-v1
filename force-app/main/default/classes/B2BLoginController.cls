@@ -147,18 +147,25 @@ public with sharing class B2BLoginController {
   /**
    * Only allows null/blank, or a same-origin relative path starting with a
    * single '/' (not '//', which browsers treat as protocol-relative and is
-   * an open-redirect vector). Any other value is dropped so a crafted
-   * startUrl query param cannot redirect the browser off-site.
+   * an open-redirect vector). Backslashes are also rejected: browsers
+   * normalize '\' to '/' for special schemes (WHATWG URL spec), so
+   * '/\evil.com' would otherwise be resolved as '//evil.com' and bypass
+   * the '//' check. Any other value is dropped so a crafted startUrl query
+   * param cannot redirect the browser off-site.
    */
   @TestVisible
   private static String sanitizeStartUrl(String startUrl) {
     if (String.isBlank(startUrl)) {
       return null;
     }
-    if (startUrl.startsWith('/') && !startUrl.startsWith('//')) {
-      return startUrl;
+    if (
+      !startUrl.startsWith('/') ||
+      startUrl.startsWith('//') ||
+      startUrl.contains('\\')
+    ) {
+      return null;
     }
-    return null;
+    return startUrl;
   }
 
   private static B2BAuthAdapter getAdapter() {

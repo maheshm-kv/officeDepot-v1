@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>B2B_Login_Heading</fullName>
+        <categories>B2B Login</categories>
+        <language>es_MX</language>
+        <protected>false</protected>
+        <shortDescription>B2B Login page heading</shortDescription>
+        <value>Iniciar sesión</value>
+    </labels>
+    <labels>
+        <fullName>B2B_Login_Email_Label</fullName>
+        <categories>B2B Login</categories>
+        <language>es_MX</language>
+        <protected>false</protected>
+        <shortDescription>Email field label</shortDescription>
+        <value>Correo electrónico</value>
+    </labels>
+    <labels>
+        <fullName>B2B_Login_Password_Label</fullName>
+        <categories>B2B Login</categories>
+        <language>es_MX</language>
+        <protected>false</protected>
+        <shortDescription>Password field label</shortDescription>
+        <value>Contraseña</value>
+    </labels>
+    <labels>
+        <fullName>B2B_Login_Button</fullName>
+        <categories>B2B Login</categories>
+        <language>es_MX</language>
+        <protected>false</protected>
+        <shortDescription>Login submit button</shortDescription>
+        <value>Iniciar sesión</value>
+    </labels>
+    <labels>
+        <fullName>B2B_Login_Forgot_Link</fullName>
+        <categories>B2B Login</categories>
+        <language>es_MX</language>
+        <protected>false</protected>
+        <shortDescription>Forgot password link text</shortDescription>
+        <value>¿Olvidó su contraseña?</value>
+    </labels>
+    <labels>
+        <fullName>B2B_Login_Password_Show</fullName>
+        <categories>B2B Login</categories>
+        <language>es_MX</language>
+        <protected>false</protected>
+        <shortDescription
+    >Accessible label for showing the password</shortDescription>
+        <value>Mostrar contraseña</value>
+    </labels>
+    <labels>
+        <fullName>B2B_Login_Password_Hide</fullName>
+        <categories>B2B Login</categories>
+        <language>es_MX</language>
+        <protected>false</protected>
+        <shortDescription
+    >Accessible label for hiding the password</shortDescription>
+        <value>Ocultar contraseña</value>
+    </labels>
+    <labels>
+        <fullName>B2B_Error_Validation_EmailRequired</fullName>
+        <categories>B2B Login</categories>
+        <language>es_MX</language>
+        <protected>false</protected>
+        <shortDescription>Email required validation message</shortDescription>
+        <value>El correo electrónico es obligatorio.</value>
+    </labels>
+    <labels>
+        <fullName>B2B_Error_Validation_EmailFormat</fullName>
+        <categories>B2B Login</categories>
+        <language>es_MX</language>
+        <protected>false</protected>
+        <shortDescription>Email format validation message</shortDescription>
+        <value>Ingrese un correo electrónico válido.</value>
+    </labels>
+    <labels>
+        <fullName>B2B_Error_Validation_PasswordRequired</fullName>
+        <categories>B2B Login</categories>
+        <language>es_MX</language>
+        <protected>false</protected>
+        <shortDescription
+    >Password required validation message</shortDescription>
+        <value>La contraseña es obligatoria.</value>
+    </labels>
+    <labels>
+        <fullName>B2B_Error_Auth_Invalid</fullName>
+        <categories>B2B Login</categories>
+        <language>es_MX</language>
+        <protected>false</protected>
+        <shortDescription>Generic invalid credentials message</shortDescription>
+        <value
+    >No fue posible iniciar sesión con la información proporcionada. Verifique sus datos e intente de nuevo.</value>
+    </labels>
+    <labels>
+        <fullName>B2B_Error_Service_Unavailable</fullName>
+        <categories>B2B Login</categories>
+        <language>es_MX</language>
+        <protected>false</protected>
+        <shortDescription>Service unavailable message</shortDescription>
+        <value
+    >El servicio no está disponible en este momento. Intente de nuevo más tarde.</value>
+    </labels>
+    <labels>
+        <fullName>B2B_Error_Unknown</fullName>
+        <categories>B2B Login</categories>
+        <language>es_MX</language>
+        <protected>false</protected>
+        <shortDescription>Generic unknown error message</shortDescription>
+        <value>Ocurrió un error inesperado. Intente de nuevo.</value>
+    </labels>
+    <labels>
+        <fullName>B2B_ForgotPassword_Heading</fullName>
+        <categories>B2B Login</categories>
+        <language>es_MX</language>
+        <protected>false</protected>
+        <shortDescription>Forgot password page heading</shortDescription>
+        <value>Recuperar contraseña</value>
+    </labels>
+    <labels>
+        <fullName>B2B_ForgotPassword_Instructions</fullName>
+        <categories>B2B Login</categories>
+        <language>es_MX</language>
+        <protected>false</protected>
+        <shortDescription>Forgot password instructions</shortDescription>
+        <value
+    >Ingrese su correo electrónico y le enviaremos instrucciones para restablecer su contraseña.</value>
+    </labels>
+    <labels>
+        <fullName>B2B_ForgotPassword_EmailLabel</fullName>
+        <categories>B2B Login</categories>
+        <language>es_MX</language>
+        <protected>false</protected>
+        <shortDescription>Forgot password email field label</shortDescription>
+        <value>Correo electrónico</value>
+    </labels>
+    <labels>
+        <fullName>B2B_ForgotPassword_SubmitButton</fullName>
+        <categories>B2B Login</categories>
+        <language>es_MX</language>
+        <protected>false</protected>
+        <shortDescription>Forgot password submit button</shortDescription>
+        <value>Enviar instrucciones</value>
+    </labels>
+    <labels>
+        <fullName>B2B_ForgotPassword_SuccessMessage</fullName>
+        <categories>B2B Login</categories>
+        <language>es_MX</language>
+        <protected>false</protected>
+        <shortDescription
+    >Generic success message, enumeration-safe</shortDescription>
+        <value
+    >Si el correo electrónico está registrado, recibirá instrucciones para restablecer su contraseña.</value>
+    </labels>
+    <labels>
+        <fullName>B2B_ForgotPassword_BackToLogin</fullName>
+        <categories>B2B Login</categories>
+        <language>es_MX</language>
+        <protected>false</protected>
+        <shortDescription>Back to login link</shortDescription>
+        <value>Regresar a iniciar sesión</value>
+    </labels>
+</CustomLabels>

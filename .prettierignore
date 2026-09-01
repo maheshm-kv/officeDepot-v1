@@ -9,3 +9,10 @@
 .vscode
 
 coverage/
+
+# Hand-formatted (4-space/single-quote) repo-root config; prettier's
+# defaults don't match its style, so leaving it unignored causes the
+# precommit lint-staged prettier step to silently reformat the whole
+# file on any commit that touches it, creating unnecessary diff noise
+# and merge-conflict risk for other work on this shared file.
+eslint.config.js

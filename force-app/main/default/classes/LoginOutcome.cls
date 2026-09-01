@@ -5,7 +5,7 @@
  * class rather than a nested B2BAuthAdapter.LoginOutcome as originally
  * sketched in the plan — the shared contract is otherwise unchanged.
  */
-public class LoginOutcome {
+public with sharing class LoginOutcome {
   public Boolean authenticated;
   public String redirectUrl;
   public String failureReason; // 'INVALID_CREDENTIALS' or 'SERVICE_ERROR', null when authenticated

@@ -33,6 +33,14 @@ export default class B2bForgotPassword extends LightningElement {
 
   successMessage = successMessage;
 
+  get isEmailInvalid() {
+    return this.emailError ? "true" : "false";
+  }
+
+  get emailErrorId() {
+    return this.emailError ? "email-error" : undefined;
+  }
+
   handleEmailChange(event) {
     this.email = event.target.value;
   }

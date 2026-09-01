@@ -54,6 +54,22 @@ export default class B2bLoginForm extends LightningElement {
     return this.passwordVisible ? "utility:hide" : "utility:preview";
   }
 
+  get isEmailInvalid() {
+    return this.emailError ? "true" : "false";
+  }
+
+  get emailErrorId() {
+    return this.emailError ? "email-error" : undefined;
+  }
+
+  get isPasswordInvalid() {
+    return this.passwordError ? "true" : "false";
+  }
+
+  get passwordErrorId() {
+    return this.passwordError ? "password-error" : undefined;
+  }
+
   handleEmailChange(event) {
     this.email = event.target.value;
   }

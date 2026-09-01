@@ -45,6 +45,15 @@ export default class B2bForgotPassword extends LightningElement {
     this.email = event.target.value;
   }
 
+  focusEmailInput() {
+    Promise.resolve().then(() => {
+      const emailInput = this.template.querySelector('[data-id="email-input"]');
+      if (emailInput) {
+        emailInput.focus();
+      }
+    });
+  }
+
   handleSubmit(event) {
     event.preventDefault();
     if (this.isSubmitting) {
@@ -58,10 +67,12 @@ export default class B2bForgotPassword extends LightningElement {
 
     if (!trimmedEmail) {
       this.emailError = emailRequiredLabel;
+      this.focusEmailInput();
       return;
     }
     if (!EMAIL_PATTERN.test(trimmedEmail)) {
       this.emailError = emailFormatLabel;
+      this.focusEmailInput();
       return;
     }
 

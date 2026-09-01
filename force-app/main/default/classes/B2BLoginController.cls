@@ -46,6 +46,7 @@ public with sharing class B2BLoginController {
     String startUrl
   ) {
     String trimmedEmail = email == null ? '' : email.trim();
+    String safeStartUrl = sanitizeStartUrl(startUrl);
 
     LoginResult emailError = validateEmailOrError(trimmedEmail);
     if (emailError != null) {
@@ -62,7 +63,7 @@ public with sharing class B2BLoginController {
 
     try {
       LoginOutcome outcome = getAdapter()
-        .doLogin(trimmedEmail, password, startUrl);
+        .doLogin(trimmedEmail, password, safeStartUrl);
       if (outcome.authenticated) {
         return new LoginResult(true, outcome.redirectUrl, null, null);
       }
@@ -139,6 +140,23 @@ public with sharing class B2BLoginController {
         'VALIDATION_ERROR',
         'Invalid or missing email.'
       );
+    }
+    return null;
+  }
+
+  /**
+   * Only allows null/blank, or a same-origin relative path starting with a
+   * single '/' (not '//', which browsers treat as protocol-relative and is
+   * an open-redirect vector). Any other value is dropped so a crafted
+   * startUrl query param cannot redirect the browser off-site.
+   */
+  @TestVisible
+  private static String sanitizeStartUrl(String startUrl) {
+    if (String.isBlank(startUrl)) {
+      return null;
+    }
+    if (startUrl.startsWith('/') && !startUrl.startsWith('//')) {
+      return startUrl;
     }
     return null;
   }

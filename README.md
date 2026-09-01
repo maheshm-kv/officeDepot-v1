@@ -51,13 +51,15 @@ Transform your ideas into custom Lightning apps that extend CRM workflows direct
 
 After deploying this package to the org:
 
-1. In Setup, go to **Digital Experiences → All Sites**, click **Builder** on the Office Depot Negocios site.
-2. In Experience Builder, create (or reuse) a page for login and drag the `b2bLoginForm` component onto it. Create/reuse a page for forgot-password and drag `b2bForgotPassword` onto it.
-3. Publish the site so both pages have live URLs.
-4. In Setup, go to **Digital Experiences → Administration → [Site Name] → Login & Registration**.
-5. Under **Login Page**, choose **Custom** and select the Experience Builder page created in step 2 that hosts `b2bLoginForm`.
-6. Under **Forgot Password Page** (or equivalent setting for this Salesforce release), select the page hosting `b2bForgotPassword`.
-7. Save, then verify by visiting the site's login URL in an incognito window — confirm the custom page renders and a login attempt round-trips through `B2BLoginController.login`.
+1. **Guest User Apex access (required prerequisite):** assign the `B2B_Login_Guest` permission set (deployed with this package, at `force-app/main/default/permissionsets/B2B_Login_Guest.permissionset-meta.xml`) — or otherwise grant equivalent Guest User Apex Class Access to `B2BLoginController` — to the Office Depot Negocios site's Guest User profile/permission set. Unauthenticated guest users cannot invoke `@AuraEnabled` Apex methods without this, so the login page will not function at all until it is assigned.
+2. **Username/email prerequisite:** before go-live, confirm the target org's Experience Cloud site allows customers to authenticate with their email address rather than a separate username — `Site.login`/`Site.forgotPassword` require a Salesforce _username_, which is not necessarily the same as the customer's email unless the site has "Login with email" enabled. If it is not enabled, either turn on that platform setting or adjust user provisioning so each customer's Salesforce username matches their email address.
+3. In Setup, go to **Digital Experiences → All Sites**, click **Builder** on the Office Depot Negocios site.
+4. In Experience Builder, create (or reuse) a page for login and drag the `b2bLoginForm` component onto it. Create/reuse a page for forgot-password and drag `b2bForgotPassword` onto it.
+5. Publish the site so both pages have live URLs.
+6. In Setup, go to **Digital Experiences → Administration → [Site Name] → Login & Registration**.
+7. Under **Login Page**, choose **Custom** and select the Experience Builder page created in step 4 that hosts `b2bLoginForm`.
+8. Under **Forgot Password Page** (or equivalent setting for this Salesforce release), select the page hosting `b2bForgotPassword`.
+9. Save, then verify by visiting the site's login URL in an incognito window — confirm the custom page renders and a login attempt round-trips through `B2BLoginController.login`.
 
 ## Additional Resources
 

@@ -52,6 +52,21 @@ private class B2BLoginControllerTest {
     }
   }
 
+  private class CapturingAdapter implements B2BAuthAdapter {
+    public String capturedStartUrl;
+    public LoginOutcome doLogin(
+      String email,
+      String password,
+      String startUrl
+    ) {
+      this.capturedStartUrl = startUrl;
+      return new LoginOutcome(true, '/home', null);
+    }
+    public Boolean doForgotPassword(String email) {
+      return true;
+    }
+  }
+
   @isTest
   static void loginWithValidCredentialsReturnsSuccessAndRedirectUrl() {
     B2BLoginController.adapterOverride = new FakeSuccessAdapter();
@@ -208,5 +223,68 @@ private class B2BLoginControllerTest {
 
     System.assertEquals(false, result.success);
     System.assertEquals('UNKNOWN_ERROR', result.errorCode);
+  }
+
+  @isTest
+  static void sanitizeStartUrlAllowsBlankOrNull() {
+    System.assertEquals(null, B2BLoginController.sanitizeStartUrl(null));
+    System.assertEquals(null, B2BLoginController.sanitizeStartUrl(''));
+    System.assertEquals(null, B2BLoginController.sanitizeStartUrl('   '));
+  }
+
+  @isTest
+  static void sanitizeStartUrlAllowsSingleSlashRelativePath() {
+    System.assertEquals(
+      '/cart/checkout',
+      B2BLoginController.sanitizeStartUrl('/cart/checkout')
+    );
+  }
+
+  @isTest
+  static void sanitizeStartUrlBlocksProtocolRelativeUrl() {
+    System.assertEquals(
+      null,
+      B2BLoginController.sanitizeStartUrl('//evil.com')
+    );
+  }
+
+  @isTest
+  static void sanitizeStartUrlBlocksAbsoluteUrl() {
+    System.assertEquals(
+      null,
+      B2BLoginController.sanitizeStartUrl('https://evil.com')
+    );
+  }
+
+  @isTest
+  static void loginWithMaliciousStartUrlDoesNotReachAdapterUnsanitized() {
+    CapturingAdapter adapter = new CapturingAdapter();
+    B2BLoginController.adapterOverride = adapter;
+
+    Test.startTest();
+    B2BLoginController.login('buyer@example.com', 'CorrectPass1', '//evil.com');
+    Test.stopTest();
+
+    System.assertEquals(
+      null,
+      adapter.capturedStartUrl,
+      'Malicious startUrl must be dropped before reaching the adapter'
+    );
+  }
+
+  @isTest
+  static void loginWithValidStartUrlPassesItThroughToAdapter() {
+    CapturingAdapter adapter = new CapturingAdapter();
+    B2BLoginController.adapterOverride = adapter;
+
+    Test.startTest();
+    B2BLoginController.login(
+      'buyer@example.com',
+      'CorrectPass1',
+      '/cart/checkout'
+    );
+    Test.stopTest();
+
+    System.assertEquals('/cart/checkout', adapter.capturedStartUrl);
   }
 }

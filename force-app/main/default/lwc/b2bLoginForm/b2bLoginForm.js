@@ -109,6 +109,15 @@ export default class B2bLoginForm extends LightningElement {
     }
 
     if (hasError) {
+      Promise.resolve().then(() => {
+        const selector = this.emailError
+          ? '[data-id="email-input"]'
+          : '[data-id="password-input"]';
+        const invalidInput = this.template.querySelector(selector);
+        if (invalidInput) {
+          invalidInput.focus();
+        }
+      });
       return;
     }
 

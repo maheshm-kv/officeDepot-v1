@@ -2,8 +2,22 @@
 <LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>61.0</apiVersion>
     <isExposed>true</isExposed>
+    <masterLabel>B2B Login Form</masterLabel>
+    <description
+  >Office Depot Negocios B2B login form with email/password fields, client validation, and password visibility toggle.</description>
     <targets>
         <target>lightningCommunity__Page</target>
         <target>lightningCommunity__Default</target>
     </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property
+        name="forgotPasswordUrl"
+        type="String"
+        label="Forgot Password Page URL"
+        description="Path to the Experience Builder page hosting the forgot-password component."
+        default="/login/forgot-password"
+      />
+        </targetConfig>
+    </targetConfigs>
 </LightningComponentBundle>

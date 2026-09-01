@@ -1,0 +1,79 @@
+.b2b-login-form {
+  max-width: 24rem;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.b2b-login-form__field {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.b2b-login-form__field label {
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.b2b-login-form__field input {
+  padding: 0.5rem;
+  border: 1px solid var(--b2b-border-color, #767676);
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.b2b-login-form__password-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.b2b-login-form__password-wrapper input {
+  flex: 1;
+}
+
+.b2b-login-form__password-wrapper button {
+  position: absolute;
+  right: 0.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.b2b-login-form__field-error {
+  color: var(--b2b-error-color, #b00020);
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.b2b-login-form__error {
+  color: var(--b2b-error-color, #b00020);
+  background-color: #fdecea;
+  border: 1px solid var(--b2b-error-color, #b00020);
+  border-radius: 4px;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.b2b-login-form__submit {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--b2b-primary-color, #cc0000);
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.b2b-login-form__submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.b2b-login-form__forgot-link {
+  display: block;
+  margin-top: 1rem;
+  text-align: center;
+  color: var(--b2b-link-color, #0056b3);
+}

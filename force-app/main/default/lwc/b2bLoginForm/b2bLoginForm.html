@@ -1,0 +1,89 @@
+<template>
+  <div class="b2b-login-form">
+    <h1>{label.loginHeading}</h1>
+
+    <div
+      if:true={formError}
+      data-id="form-error"
+      class="b2b-login-form__error"
+      role="alert"
+    >
+      {formError}
+    </div>
+
+    <form onsubmit={handleSubmit}>
+      <div class="b2b-login-form__field">
+        <label for="email-input">{label.emailLabel}</label>
+        <input
+          type="email"
+          id="email-input"
+          data-id="email-input"
+          value={email}
+          onchange={handleEmailChange}
+          aria-invalid={emailError}
+          aria-describedby="email-error"
+        />
+        <div
+          if:true={emailError}
+          data-id="email-error"
+          id="email-error"
+          class="b2b-login-form__field-error"
+        >
+          {emailError}
+        </div>
+      </div>
+
+      <div class="b2b-login-form__field">
+        <label for="password-input">{label.passwordLabel}</label>
+        <div class="b2b-login-form__password-wrapper">
+          <input
+            type={passwordInputType}
+            id="password-input"
+            data-id="password-input"
+            value={password}
+            onchange={handlePasswordChange}
+            aria-invalid={passwordError}
+            aria-describedby="password-error"
+          />
+          <button
+            type="button"
+            data-id="password-toggle"
+            aria-pressed={passwordVisible}
+            aria-label={passwordToggleLabel}
+            onclick={handleTogglePasswordVisibility}
+          >
+            <lightning-icon
+              icon-name={passwordToggleIcon}
+              size="x-small"
+            ></lightning-icon>
+          </button>
+        </div>
+        <div
+          if:true={passwordError}
+          data-id="password-error"
+          id="password-error"
+          class="b2b-login-form__field-error"
+        >
+          {passwordError}
+        </div>
+      </div>
+
+      <button
+        type="submit"
+        data-id="submit-button"
+        disabled={isSubmitting}
+        class="b2b-login-form__submit"
+      >
+        {label.loginButtonLabel}
+      </button>
+    </form>
+
+    <a
+      href={forgotPasswordUrl}
+      data-id="forgot-link"
+      class="b2b-login-form__forgot-link"
+    >
+      {label.forgotLinkLabel}
+    </a>
+  </div>
+</template>

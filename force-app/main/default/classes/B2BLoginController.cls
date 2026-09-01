@@ -47,16 +47,9 @@ public with sharing class B2BLoginController {
   ) {
     String trimmedEmail = email == null ? '' : email.trim();
 
-    if (
-      String.isBlank(trimmedEmail) ||
-      !EMAIL_PATTERN.matcher(trimmedEmail).matches()
-    ) {
-      return new LoginResult(
-        false,
-        null,
-        'VALIDATION_ERROR',
-        'Invalid or missing email.'
-      );
+    LoginResult emailError = validateEmailOrError(trimmedEmail);
+    if (emailError != null) {
+      return emailError;
     }
     if (String.isBlank(password)) {
       return new LoginResult(
@@ -106,16 +99,9 @@ public with sharing class B2BLoginController {
   public static LoginResult requestPasswordReset(String email) {
     String trimmedEmail = email == null ? '' : email.trim();
 
-    if (
-      String.isBlank(trimmedEmail) ||
-      !EMAIL_PATTERN.matcher(trimmedEmail).matches()
-    ) {
-      return new LoginResult(
-        false,
-        null,
-        'VALIDATION_ERROR',
-        'Invalid or missing email.'
-      );
+    LoginResult emailError = validateEmailOrError(trimmedEmail);
+    if (emailError != null) {
+      return emailError;
     }
 
     try {
@@ -135,6 +121,26 @@ public with sharing class B2BLoginController {
         'Unexpected error during password reset.'
       );
     }
+  }
+
+  /**
+   * Validates a (pre-trimmed) email address shared by login() and
+   * requestPasswordReset(). Returns null when valid, or the
+   * VALIDATION_ERROR LoginResult to return immediately when invalid.
+   */
+  private static LoginResult validateEmailOrError(String trimmedEmail) {
+    if (
+      String.isBlank(trimmedEmail) ||
+      !EMAIL_PATTERN.matcher(trimmedEmail).matches()
+    ) {
+      return new LoginResult(
+        false,
+        null,
+        'VALIDATION_ERROR',
+        'Invalid or missing email.'
+      );
+    }
+    return null;
   }
 
   private static B2BAuthAdapter getAdapter() {

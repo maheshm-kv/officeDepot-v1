@@ -1,0 +1,72 @@
+{
+  "type": "sfdc_cms__view",
+  "title": "Order Summary Details",
+  "contentBody": {
+    "component": {
+      "children": [
+        {
+          "attributes": {
+            "dxpStyle": {
+              "padding": {
+                "bottom": "0.5rem",
+                "left": "0.75rem",
+                "right": "0.75rem",
+                "top": "0.5rem"
+              }
+            }
+          },
+          "id": "20b071ad-3bc8-4cd0-b97a-4f35c3c3be70"
+        },
+        {
+          "attributes": {
+            "dxpStyle": {
+              "padding": {
+                "bottom": "0.5rem",
+                "left": "0.75rem",
+                "right": "0.75rem",
+                "top": "0.5rem"
+              }
+            }
+          },
+          "id": "d21416c6-5613-45ac-a0a7-c95ad34aee1f"
+        },
+        {
+          "attributes": {
+            "dxpStyle": {
+              "padding": {
+                "bottom": "0.5rem",
+                "left": "0.75rem",
+                "right": "0.75rem",
+                "top": "0.5rem"
+              }
+            }
+          },
+          "id": "e6145f7d-2309-4f0e-8426-fd0cdb8aeed2"
+        },
+        {
+          "attributes": {
+            "dxpStyle": {
+              "padding": {
+                "bottom": "0.5rem",
+                "left": "0.75rem",
+                "right": "0.75rem",
+                "top": "0.5rem"
+              }
+            },
+            "sectionColumnGutterWidth": "0rem"
+          },
+          "id": "76c7f3bb-b661-4dc1-a35c-d41c65c9e959"
+        },
+        {
+          "attributes": {
+            "dxpStyle": {
+              "isVisible": false
+            }
+          },
+          "id": "df2b3991-f81f-464d-adeb-d5ae4ec75eb8"
+        }
+      ]
+    }
+  },
+  "urlName": "order-summary-details"
+}

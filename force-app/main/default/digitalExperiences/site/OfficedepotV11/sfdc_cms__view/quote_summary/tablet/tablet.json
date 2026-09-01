@@ -1,0 +1,64 @@
+{
+  "type": "sfdc_cms__view",
+  "title": "Quote Summary Details",
+  "contentBody": {
+    "component": {
+      "children": [
+        {
+          "attributes": {
+            "dxpStyle": {
+              "padding": {
+                "bottom": "0.5rem",
+                "left": "0.75rem",
+                "right": "0.75rem",
+                "top": "0.5rem"
+              }
+            }
+          },
+          "id": "77d418cf-c52f-424b-ad2b-fdbc4813ef57"
+        },
+        {
+          "attributes": {
+            "dxpStyle": {
+              "padding": {
+                "bottom": "0.5rem",
+                "left": "0.75rem",
+                "right": "0.75rem",
+                "top": "0.5rem"
+              }
+            }
+          },
+          "id": "18b3b399-4bab-4253-ab29-120975ad640a"
+        },
+        {
+          "attributes": {
+            "dxpStyle": {
+              "padding": {
+                "bottom": "0.5rem",
+                "left": "0.75rem",
+                "right": "0.75rem",
+                "top": "0.5rem"
+              }
+            }
+          },
+          "id": "573aeed2-7186-4652-9a47-dfb94807de1e"
+        },
+        {
+          "attributes": {
+            "dxpStyle": {
+              "padding": {
+                "bottom": "0.5rem",
+                "left": "0.75rem",
+                "right": "0.75rem",
+                "top": "0.5rem"
+              }
+            },
+            "sectionColumnGutterWidth": "0rem"
+          },
+          "id": "b00dea00-c830-4f86-b67f-852eed23270a"
+        }
+      ]
+    }
+  },
+  "urlName": "quote-summary-details"
+}

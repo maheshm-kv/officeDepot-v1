@@ -1,0 +1,354 @@
+{
+  "type": "sfdc_cms__view",
+  "title": "Order Summary List",
+  "contentBody": {
+    "component": {
+      "children": [
+        {
+          "children": [
+            {
+              "attributes": {
+                "backgroundImageConfig": "",
+                "backgroundImageOverlay": "rgba(0,0,0,0)",
+                "componentSpacerSize": "",
+                "dxpStyle": {
+                  "padding": {
+                    "bottom": "1rem",
+                    "left": "1rem",
+                    "right": "1rem",
+                    "top": "1rem"
+                  }
+                },
+                "layoutDirectionDesktop": "row",
+                "layoutDirectionMobile": "column",
+                "layoutDirectionTablet": "column",
+                "maxContentWidth": "",
+                "sectionColumnGutterWidth": "",
+                "sectionConfig": "{\"UUID\":\"de4748e6-4e53-4115-886d-83b5cff5a0f5\",\"columns\":[{\"UUID\":\"af4547ca-a3f9-4a30-8743-b4839f28a2b8\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+                "sectionMinHeight": "",
+                "sectionVerticalAlign": "flex-start"
+              },
+              "children": [
+                {
+                  "children": [
+                    {
+                      "attributes": {
+                        "backgroundColor": "",
+                        "isLinkable": false,
+                        "linkAssistiveText": "",
+                        "paddingHorizontal": "none",
+                        "paddingVertical": "xx-small",
+                        "text": "Order History",
+                        "textAlign": "left",
+                        "textDecoration": "{\"bold\": false}",
+                        "textDisplayInfo": "{\"textStyle\": \"heading-large\", \"headingTag\": \"h2\"}"
+                      },
+                      "definition": "dxp_base:textBlock",
+                      "id": "10f481c7-3439-43f5-8c5c-332776a50ff2",
+                      "type": "component"
+                    }
+                  ],
+                  "id": "af4547ca-a3f9-4a30-8743-b4839f28a2b8",
+                  "name": "col1",
+                  "title": "Column 1",
+                  "type": "region"
+                }
+              ],
+              "definition": "community_layout:section",
+              "id": "de4748e6-4e53-4115-886d-83b5cff5a0f5",
+              "type": "component"
+            },
+            {
+              "attributes": {
+                "backgroundImageConfig": "",
+                "backgroundImageOverlay": "rgba(0,0,0,0)",
+                "componentSpacerSize": "",
+                "dxpStyle": {
+                  "padding": {
+                    "bottom": "1rem",
+                    "left": "1rem",
+                    "right": "1rem",
+                    "top": "1rem"
+                  }
+                },
+                "layoutDirectionDesktop": "row",
+                "layoutDirectionMobile": "column",
+                "layoutDirectionTablet": "column",
+                "maxContentWidth": "",
+                "sectionColumnGutterWidth": "",
+                "sectionConfig": "{\"UUID\":\"86ae7f70-cd33-4a80-a679-4625882265da\",\"columns\":[{\"UUID\":\"0ecf68b2-ce97-4847-a63b-494d99669f46\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":null}]}",
+                "sectionMinHeight": "",
+                "sectionVerticalAlign": "flex-start"
+              },
+              "children": [
+                {
+                  "children": [
+                    {
+                      "attributes": {},
+                      "children": [
+                        {
+                          "children": [
+                            {
+                              "attributes": {},
+                              "definition": "commerce_builder:orderListDateFilter",
+                              "id": "df590733-0e88-46bf-85d5-f4038d233602",
+                              "type": "component"
+                            }
+                          ],
+                          "id": "92cd9bba-b89e-45b5-ba4e-0d03b9c7c19b",
+                          "name": "dateFilter",
+                          "title": "dateFilter",
+                          "type": "region"
+                        },
+                        {
+                          "children": [
+                            {
+                              "attributes": {
+                                "backgroundColor": "",
+                                "isLinkable": false,
+                                "linkAssistiveText": "",
+                                "paddingHorizontal": "none",
+                                "paddingVertical": "none",
+                                "text": "We couldn't find any orders from that period of time.",
+                                "textAlign": "center",
+                                "textDecoration": "{\"bold\": true}",
+                                "textDisplayInfo": "{\"headingTag\": \"h3\", \"textStyle\": \"heading-medium\"}"
+                              },
+                              "definition": "dxp_base:textBlock",
+                              "id": "ba44919b-081b-43c2-ae95-ec1a16c23fa6",
+                              "type": "component"
+                            },
+                            {
+                              "attributes": {
+                                "backgroundColor": "",
+                                "isLinkable": false,
+                                "linkAssistiveText": "",
+                                "paddingHorizontal": "none",
+                                "paddingVertical": "none",
+                                "text": "Try changing your filter settings.",
+                                "textAlign": "center",
+                                "textDecoration": "{\"bold\": false}",
+                                "textDisplayInfo": "{\"headingTag\": \"h4\", \"textStyle\": \"heading-small\"}"
+                              },
+                              "definition": "dxp_base:textBlock",
+                              "id": "2714efe5-ff14-4aa9-ba2b-a93b9aed84ec",
+                              "type": "component"
+                            },
+                            {
+                              "attributes": {
+                                "alignment": "center",
+                                "size": "standard",
+                                "stretch": "standard",
+                                "text": "Continue Shopping",
+                                "type": "primary",
+                                "url": "/"
+                              },
+                              "definition": "dxp_base:button",
+                              "id": "fb33f8f6-4bba-4d4b-be97-49bfbfff3995",
+                              "type": "component"
+                            }
+                          ],
+                          "id": "aa7ca765-27b2-4f61-a621-042a8e9dc0f4",
+                          "name": "emptyBody",
+                          "title": "emptyBody",
+                          "type": "region"
+                        },
+                        {
+                          "children": [
+                            {
+                              "attributes": {
+                                "autoScrollToMostRecent": true,
+                                "backgroundColor": "",
+                                "borderColor": "",
+                                "borderRadius": 0,
+                                "borderWidth": 0,
+                                "isOrderReversed": false,
+                                "itemSpacing": "small",
+                                "listType": "unformatted",
+                                "orderedMarkerAlignment": "middle",
+                                "orderedMarkerColor": "",
+                                "orderedMarkerSize": "body-regular",
+                                "orderedMarkerStartValue": 1,
+                                "orderedMarkerStyle": "numbers",
+                                "showPagination": true,
+                                "unorderedMarkerAlignment": "middle",
+                                "unorderedMarkerColor": "",
+                                "unorderedMarkerSize": "body-regular",
+                                "unorderedMarkerStyle": "filled-dots",
+                                "width": 100
+                              },
+                              "children": [
+                                {
+                                  "children": [
+                                    {
+                                      "attributes": {
+                                        "borderColor": "#ecebea",
+                                        "headerBgColor": "#F7F9FA",
+                                        "imageAspectRatio": "1",
+                                        "imageSize": "contain",
+                                        "order": "{!OrderSummary}",
+                                        "orderSummaryFieldMapping": "[]",
+                                        "reorderButtonLabel": "Start Reorder",
+                                        "showReorderButton": true,
+                                        "viewDetailsLinkLabel": "View Details"
+                                      },
+                                      "children": [
+                                        {
+                                          "children": [
+                                            {
+                                              "attributes": {
+                                                "backgroundColor": "",
+                                                "isLinkable": false,
+                                                "linkAssistiveText": "",
+                                                "paddingHorizontal": "none",
+                                                "paddingVertical": "none",
+                                                "text": "Order Number: ",
+                                                "textAlign": "left",
+                                                "textDecoration": "{\"bold\": true}",
+                                                "textDisplayInfo": "{\"textStyle\": \"heading-small\", \"headingTag\": \"p\", \"enableOverride\":true}"
+                                              },
+                                              "definition": "dxp_base:textBlock",
+                                              "id": "e6d553c8-c5be-497b-935a-cc139a813608",
+                                              "type": "component"
+                                            }
+                                          ],
+                                          "id": "c887d70a-1e7c-4220-b4f7-4e28f584716a",
+                                          "name": "orderNumberLabel",
+                                          "title": "orderNumberLabel",
+                                          "type": "region"
+                                        },
+                                        {
+                                          "children": [
+                                            {
+                                              "attributes": {
+                                                "backgroundColor": "",
+                                                "isLinkable": false,
+                                                "linkAssistiveText": "",
+                                                "paddingHorizontal": "none",
+                                                "paddingVertical": "none",
+                                                "text": "{!OrderSummary.orderNumber}",
+                                                "textAlign": "left",
+                                                "textDecoration": "{}",
+                                                "textDisplayInfo": "{\"textStyle\": \"heading-small\", \"headingTag\": \"p\", \"enableOverride\":true}"
+                                              },
+                                              "definition": "dxp_base:textBlock",
+                                              "id": "d0566e98-e8c8-4dda-b1c4-26c40c0f97aa",
+                                              "type": "component"
+                                            }
+                                          ],
+                                          "id": "04258e03-fb3b-4b41-aba7-4a74c8ab25f8",
+                                          "name": "orderNumber",
+                                          "title": "orderNumber",
+                                          "type": "region"
+                                        }
+                                      ],
+                                      "definition": "commerce_builder:orderSummary",
+                                      "id": "333b5a6b-0ede-44b7-b312-830c3ecff43b",
+                                      "type": "component"
+                                    }
+                                  ],
+                                  "id": "85062530-a066-46ea-84b6-177d79fa11a3",
+                                  "name": "sfdcRepeaterItem",
+                                  "title": "sfdcRepeaterItem",
+                                  "type": "region"
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "attributes": {
+                                        "paginatorAttributes": "{\"nested\":{\"componentName\":\"dxp_content_layout:paginatorShowMore\",\"attributes\":{\"label\":\"Show More\",\"textDecoration\":\"{}\",\"buttonStyle\":\"secondary\",\"size\":\"standard\",\"width\":\"standard\",\"verticalPadding\":\"none\",\"horizontalAlignment\":\"center\"}}}",
+                                        "variant": "showmore"
+                                      },
+                                      "children": [
+                                        {
+                                          "children": [
+                                            {
+                                              "attributes": {},
+                                              "definition": "dxp_page_layout:placeHolder",
+                                              "id": "bae40e36-ad0a-4b24-aa91-29502805fea5",
+                                              "type": "component"
+                                            }
+                                          ],
+                                          "id": "d3eb9954-ec0d-47ef-a36c-74a5ff87d7f5",
+                                          "name": "placeholder",
+                                          "title": "placeholder",
+                                          "type": "region"
+                                        }
+                                      ],
+                                      "definition": "dxp_content_layout:paginator2",
+                                      "id": "d833a2ba-a509-40b6-bdcc-47323764242a",
+                                      "type": "component"
+                                    }
+                                  ],
+                                  "id": "6a8e0981-5212-4d12-8358-ee049d120683",
+                                  "name": "pagination",
+                                  "title": "pagination",
+                                  "type": "region"
+                                }
+                              ],
+                              "definition": "dxp_content_layout:list",
+                              "id": "13036854-e0a8-48c3-a10b-41c28ba82c49",
+                              "type": "component",
+                              "dataProviders": [
+                                {
+                                  "definition": "sfdc_cms__commerceOrderListDataProvider",
+                                  "sfdcExpressionKey": "OrderSummary",
+                                  "attributes": {}
+                                }
+                              ]
+                            }
+                          ],
+                          "id": "57e72c77-684e-4c82-a95b-b3f251591f9d",
+                          "name": "orderListRepeater",
+                          "title": "orderListRepeater",
+                          "type": "region"
+                        }
+                      ],
+                      "definition": "commerce_builder:orderList",
+                      "id": "4ef865a7-d910-4785-92b8-7a5e6492752d",
+                      "type": "component"
+                    }
+                  ],
+                  "id": "0ecf68b2-ce97-4847-a63b-494d99669f46",
+                  "name": "col1",
+                  "title": "Column 1",
+                  "type": "region"
+                }
+              ],
+              "definition": "community_layout:section",
+              "id": "86ae7f70-cd33-4a80-a679-4625882265da",
+              "type": "component"
+            }
+          ],
+          "id": "bf11f49b-e3eb-4149-92c4-faa72db01475",
+          "name": "content",
+          "title": "Content",
+          "type": "region"
+        },
+        {
+          "children": [
+            {
+              "attributes": {
+                "recordId": "{!recordId}"
+              },
+              "definition": "community_builder:seoAssistant",
+              "id": "1b4420f6-7250-4b53-ad95-4f6be52afcc1",
+              "type": "component"
+            }
+          ],
+          "id": "ef41390b-612a-4444-85c3-2fb0d77b5e2c",
+          "name": "sfdcHiddenRegion",
+          "title": "sfdcHiddenRegion",
+          "type": "region"
+        }
+      ],
+      "definition": "community_layout:sldsFlexibleLayout",
+      "id": "6018ada9-55f0-45a0-884d-0331e320bc22",
+      "type": "component"
+    },
+    "dataProviders": [],
+    "themeLayoutType": "MyAccount",
+    "viewType": "list-1Os"
+  },
+  "urlName": "order-summary-list"
+}

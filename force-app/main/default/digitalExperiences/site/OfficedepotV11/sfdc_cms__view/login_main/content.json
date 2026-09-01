@@ -1,0 +1,82 @@
+{
+  "type": "sfdc_cms__view",
+  "title": "Login",
+  "contentBody": {
+    "component": {
+      "children": [
+        {
+          "children": [
+            {
+              "attributes": {
+                "backgroundImageConfig": "",
+                "backgroundImageOverlay": "rgba(0,0,0,0)",
+                "componentSpacerSize": "",
+                "layoutDirectionDesktop": "row",
+                "layoutDirectionMobile": "column",
+                "layoutDirectionTablet": "column",
+                "maxContentWidth": "",
+                "sectionColumnGutterWidth": "",
+                "sectionConfig": "{\"UUID\":\"6b13f8a0-43fd-4964-9127-3fa59f4e8122\",\"columns\":[{\"UUID\":\"c3ca4c7c-353f-4eab-ad1e-1134e5a27dca\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":null}]}",
+                "sectionMinHeight": "",
+                "sectionVerticalAlign": "flex-start"
+              },
+              "children": [
+                {
+                  "children": [
+                    {
+                      "attributes": {
+                        "forgotPasswordUrl": "/ForgotPassword",
+                        "learnMoreUrl": "/conoce-mas",
+                        "logoAltText": "Office Depot Negocios"
+                      },
+                      "definition": "c:odNegociosLogin",
+                      "id": "76bab007-79e0-4fde-ac34-9f0ce8908ec7",
+                      "type": "component"
+                    }
+                  ],
+                  "id": "c3ca4c7c-353f-4eab-ad1e-1134e5a27dca",
+                  "name": "col1",
+                  "title": "Column 1",
+                  "type": "region"
+                }
+              ],
+              "definition": "community_layout:section",
+              "id": "6b13f8a0-43fd-4964-9127-3fa59f4e8122",
+              "type": "component"
+            }
+          ],
+          "id": "35946586-f289-4957-840c-646562b51702",
+          "name": "content",
+          "title": "Content",
+          "type": "region"
+        },
+        {
+          "children": [
+            {
+              "attributes": {
+                "customHeadTags": "",
+                "description": "",
+                "pageTitle": "Login",
+                "recordId": "{!recordId}"
+              },
+              "definition": "community_builder:seoAssistant",
+              "id": "af6d708b-8423-4a2e-a7ec-e4aded561ce9",
+              "type": "component"
+            }
+          ],
+          "id": "e6c2d9a8-41ec-492c-8a3b-ce454e89bd04",
+          "name": "sfdcHiddenRegion",
+          "title": "sfdcHiddenRegion",
+          "type": "region"
+        }
+      ],
+      "definition": "community_layout:sldsFlexibleLayout",
+      "id": "ad3142ce-36ff-4fa7-b1ce-b21b885c4d10",
+      "type": "component"
+    },
+    "dataProviders": [],
+    "themeLayoutType": "External",
+    "viewType": "login-main"
+  },
+  "urlName": "login"
+}

@@ -1,0 +1,444 @@
+{
+  "type": "sfdc_cms__view",
+  "title": "Quote Summary Details",
+  "contentBody": {
+    "component": {
+      "children": [
+        {
+          "children": [
+            {
+              "attributes": {
+                "clientState": "{!QuoteDetail.ClientState}",
+                "errorComponentButtonText": "Continue Shopping",
+                "errorComponentHeadingText": "We couldn’t retrieve the quote details",
+                "errorComponentSubHeadingText": "Refresh the page. If the issue persists, contact support.",
+                "quoteSummaryDetails": "{!QuoteDetail}"
+              },
+              "children": [
+                {
+                  "children": [
+                    {
+                      "attributes": {
+                        "backgroundImageConfig": "",
+                        "backgroundImageOverlay": "rgba(0,0,0,0)",
+                        "componentSpacerSize": "",
+                        "dxpStyle": {
+                          "padding": {
+                            "bottom": "0.5rem",
+                            "left": "1rem",
+                            "right": "1rem",
+                            "top": "0.5rem"
+                          }
+                        },
+                        "layoutDirectionDesktop": "row",
+                        "layoutDirectionMobile": "column",
+                        "layoutDirectionTablet": "column",
+                        "maxContentWidth": "",
+                        "sectionColumnGutterWidth": "",
+                        "sectionConfig": "{\"UUID\":\"77d418cf-c52f-424b-ad2b-fdbc4813ef57\",\"columns\":[{\"UUID\":\"fffb4bb7-d054-4a7a-8ded-e137fbd2f47f\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":null}]}",
+                        "sectionMinHeight": "",
+                        "sectionVerticalAlign": "flex-start"
+                      },
+                      "children": [
+                        {
+                          "children": [
+                            {
+                              "attributes": {
+                                "divider": "slash",
+                                "hideOnMobile": true,
+                                "maxDepthOnMobile": "3",
+                                "showHomeLink": false,
+                                "showLastItemAsLink": false,
+                                "textSize": "small"
+                              },
+                              "definition": "commerce_builder:breadcrumbs",
+                              "id": "04481e75-cf91-46b8-81cf-3cc7b0ca0693",
+                              "type": "component"
+                            }
+                          ],
+                          "id": "fffb4bb7-d054-4a7a-8ded-e137fbd2f47f",
+                          "name": "col1",
+                          "title": "Column 1",
+                          "type": "region"
+                        }
+                      ],
+                      "definition": "community_layout:section",
+                      "id": "77d418cf-c52f-424b-ad2b-fdbc4813ef57",
+                      "type": "component"
+                    },
+                    {
+                      "attributes": {
+                        "backgroundImageConfig": "",
+                        "backgroundImageOverlay": "rgba(0,0,0,0)",
+                        "componentSpacerSize": "",
+                        "dxpStyle": {
+                          "padding": {
+                            "bottom": "1rem",
+                            "left": "1rem",
+                            "right": "1rem",
+                            "top": "1rem"
+                          }
+                        },
+                        "layoutDirectionDesktop": "row",
+                        "layoutDirectionMobile": "column",
+                        "layoutDirectionTablet": "column",
+                        "maxContentWidth": "",
+                        "sectionColumnGutterWidth": "",
+                        "sectionConfig": "{\"UUID\":\"18b3b399-4bab-4253-ab29-120975ad640a\",\"columns\":[{\"UUID\":\"1291f86c-9c14-431b-a351-ee3e5ddfd5d1\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":null},{\"UUID\":\"941524e3-6acf-4726-b377-583ff27cbb13\",\"columnName\":\"Column 2 - Renegotiate\",\"columnKey\":\"col2a\",\"columnWidth\":\"3\",\"seedComponents\":null},{\"UUID\":\"137a089d-edcd-4c97-b081-d965cb1e83fd\",\"columnName\":\"Column 2 - Accept & Buy / Duplicate to Cart\",\"columnKey\":\"col2b\",\"columnWidth\":\"3\",\"seedComponents\":null}]}",
+                        "sectionMinHeight": "",
+                        "sectionVerticalAlign": "flex-start"
+                      },
+                      "children": [
+                        {
+                          "children": [
+                            {
+                              "attributes": {
+                                "backgroundColor": "",
+                                "isLinkable": false,
+                                "linkAssistiveText": "",
+                                "paddingHorizontal": "none",
+                                "paddingVertical": "none",
+                                "text": "Quote Request Number: {!QuoteDetail.quoteNumber}",
+                                "textAlign": "left",
+                                "textDecoration": "{\"bold\": true}",
+                                "textDisplayInfo": "{\"textStyle\": \"heading-large\", \"headingTag\": \"h1\"}"
+                              },
+                              "definition": "dxp_base:textBlock",
+                              "id": "0798e9be-4138-4e8f-8fd0-c29da9a2a361",
+                              "type": "component"
+                            }
+                          ],
+                          "id": "1291f86c-9c14-431b-a351-ee3e5ddfd5d1",
+                          "name": "col1",
+                          "title": "Column 1",
+                          "type": "region"
+                        },
+                        {
+                          "children": [
+                            {
+                              "attributes": {
+                                "buttonText": "Renegotiate or Decline",
+                                "declineButtonLabel": "Decline",
+                                "hasLineItems": "{!QuoteDetail.hasLineItems}",
+                                "headerText": "Renegotiate or decline quote?",
+                                "notesPlaceholder": "Describe the modifications you need or your reason for declining...",
+                                "quoteId": "{!QuoteDetail.id}",
+                                "quoteStatus": "{!QuoteDetail.status}",
+                                "renegotiateButtonLabel": "Renegotiate",
+                                "size": "standard",
+                                "subheadingText": "Request a revised quote for a better offer, or decline this quote.",
+                                "variant": "secondary",
+                                "width": "stretch"
+                              },
+                              "definition": "commerce_builder:quoteDeclineRenegotiateButton",
+                              "id": "88fe0dc8-cb49-4596-be8e-fcb476504a85",
+                              "type": "component"
+                            }
+                          ],
+                          "id": "941524e3-6acf-4726-b377-583ff27cbb13",
+                          "name": "col2a",
+                          "title": "col2a",
+                          "type": "region"
+                        },
+                        {
+                          "children": [
+                            {
+                              "attributes": {
+                                "acceptAndBuyButtonText": "Accept & Buy",
+                                "acceptAndBuyModalCancelButtonLabel": "Cancel",
+                                "acceptAndBuyModalDescriptionLabel": "Accepting this quote locks the prices and takes you to the default cart to complete the purchase.",
+                                "acceptAndBuyModalInfoText": "This action removes any promotions applied to items that are already in the default cart.",
+                                "acceptAndBuyModalSendRequestButtonLabel": "Accept & Buy",
+                                "acceptAndBuyModalTitleText": "Accept quote?",
+                                "buyButtonText": "Buy",
+                                "buyModalCancelButtonLabel": "Cancel",
+                                "buyModalDescriptionLabel": "You'll be taken to your cart to finalize the purchase.",
+                                "buyModalInfoText": "Proceeding removes any promotions applied to items already in your cart.",
+                                "buyModalSendRequestButtonLabel": "Buy",
+                                "buyModalTitleText": "Complete purchase?",
+                                "hasLineItems": "{!QuoteDetail.hasLineItems}",
+                                "orderId": "{!QuoteDetail.orderId}",
+                                "quoteId": "{!QuoteDetail.id}",
+                                "quoteStatus": "{!QuoteDetail.status}",
+                                "size": "standard",
+                                "variant": "primary",
+                                "width": "stretch"
+                              },
+                              "definition": "commerce_builder:quoteAcceptAndBuyButton",
+                              "id": "1daae762-eacd-4943-85fe-ebca66336ab1",
+                              "type": "component"
+                            },
+                            {
+                              "attributes": {
+                                "buttonText": "Duplicate to Cart",
+                                "cancelButtonLabel": "Cancel",
+                                "descriptionLabel": "Copying this quote adds its products to your default cart.",
+                                "hasLineItems": "{!QuoteDetail.hasLineItems}",
+                                "infoText": "This action adds products to your cart at current store prices, not quote prices.",
+                                "orderId": "{!QuoteDetail.orderId}",
+                                "quoteId": "{!QuoteDetail.id}",
+                                "quoteStatus": "{!QuoteDetail.status}",
+                                "sendRequestButtonLabel": "Copy to Cart",
+                                "size": "standard",
+                                "titleText": "Copy items from your quote to cart?",
+                                "variant": "tertiary",
+                                "width": "stretch"
+                              },
+                              "definition": "commerce_builder:quoteDuplicateToCartButton",
+                              "id": "cd7e1f29-460f-4918-a7a3-e2e4b8f359d2",
+                              "type": "component"
+                            }
+                          ],
+                          "id": "137a089d-edcd-4c97-b081-d965cb1e83fd",
+                          "name": "col2b",
+                          "title": "col2b",
+                          "type": "region"
+                        }
+                      ],
+                      "definition": "community_layout:section",
+                      "id": "18b3b399-4bab-4253-ab29-120975ad640a",
+                      "type": "component"
+                    },
+                    {
+                      "attributes": {
+                        "backgroundImageConfig": "",
+                        "backgroundImageOverlay": "rgba(0,0,0,0)",
+                        "componentSpacerSize": "",
+                        "dxpStyle": {
+                          "padding": {
+                            "bottom": "1rem",
+                            "left": "1rem",
+                            "right": "1rem",
+                            "top": "1rem"
+                          }
+                        },
+                        "layoutDirectionDesktop": "row",
+                        "layoutDirectionMobile": "column",
+                        "layoutDirectionTablet": "column",
+                        "maxContentWidth": "",
+                        "sectionColumnGutterWidth": "",
+                        "sectionConfig": "{\"UUID\":\"573aeed2-7186-4652-9a47-dfb94807de1e\",\"columns\":[{\"UUID\":\"44d34bd2-6364-450d-9514-d981636e9005\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":null}]}",
+                        "sectionMinHeight": "",
+                        "sectionVerticalAlign": "flex-start"
+                      },
+                      "children": [
+                        {
+                          "children": [
+                            {
+                              "attributes": {
+                                "alignment": "center",
+                                "lineStyle": "solid",
+                                "size": 1,
+                                "width": 100
+                              },
+                              "definition": "dxp_base:horizontalLine",
+                              "id": "a3699e5c-a7fa-47d5-9ac8-0043ce451985",
+                              "type": "component"
+                            }
+                          ],
+                          "id": "44d34bd2-6364-450d-9514-d981636e9005",
+                          "name": "col1",
+                          "title": "Column 1",
+                          "type": "region"
+                        }
+                      ],
+                      "definition": "community_layout:section",
+                      "id": "573aeed2-7186-4652-9a47-dfb94807de1e",
+                      "type": "component"
+                    },
+                    {
+                      "attributes": {
+                        "backgroundImageConfig": "",
+                        "backgroundImageOverlay": "rgba(0,0,0,0)",
+                        "componentSpacerSize": "",
+                        "dxpStyle": {
+                          "padding": {
+                            "bottom": "1rem",
+                            "left": "1rem",
+                            "right": "1rem",
+                            "top": "1rem"
+                          }
+                        },
+                        "layoutDirectionDesktop": "row",
+                        "layoutDirectionMobile": "column",
+                        "layoutDirectionTablet": "column",
+                        "maxContentWidth": "",
+                        "sectionColumnGutterWidth": "3rem",
+                        "sectionConfig": "{\"UUID\":\"b00dea00-c830-4f86-b67f-852eed23270a\",\"columns\":[{\"UUID\":\"806707eb-d24e-47c3-aa75-9d89d6ea3f61\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"8\",\"seedComponents\":null},{\"UUID\":\"04acedae-a48f-473f-95e2-37433d63970e\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"4\",\"seedComponents\":null}]}",
+                        "sectionMinHeight": "",
+                        "sectionVerticalAlign": "flex-start"
+                      },
+                      "children": [
+                        {
+                          "children": [
+                            {
+                              "attributes": {
+                                "customStatuses": "[]",
+                                "includeAcceptedStatus": true,
+                                "includeApprovedStatus": true,
+                                "includeDeniedStatus": true,
+                                "includeDraftStatus": true,
+                                "includeInReviewStatus": true,
+                                "includeNeedsReviewStatus": false,
+                                "includePresentedStatus": false,
+                                "includeRejectedStatus": true,
+                                "quoteStatus": "{!QuoteDetail.status}",
+                                "trackerCardBorderColor": "#D9DFE7",
+                                "trackerCardBorderRadius": 5
+                              },
+                              "definition": "commerce_builder:quoteStatusTracker",
+                              "id": "600f9c64-6927-461b-a955-dc004a6d1caa",
+                              "type": "component"
+                            },
+                            {
+                              "attributes": {
+                                "currencyIsoCode": "{!QuoteDetail.fields.CurrencyIsoCode.text}",
+                                "imageAspectRatio": "1",
+                                "imageSize": "contain",
+                                "items": "{!QuoteDetail.LineItems}",
+                                "pageSize": 100,
+                                "productDetailsPillBackgroundColor": "rgb(217, 223, 231)",
+                                "productDetailsPillBorderColor": "rgb(217, 223, 231)",
+                                "productDetailsPillBorderRadius": 8,
+                                "productDetailsPillFontSize": "small",
+                                "productUnavailableMessage": "(Not Available)",
+                                "removeProductLinks": false,
+                                "showProductImage": true,
+                                "showViewBundleDetail": false,
+                                "totalPrice": "{!QuoteDetail.fields.TotalPrice.text}",
+                                "viewBundleDetailLabel": "View Details"
+                              },
+                              "children": [
+                                {
+                                  "children": [
+                                    {
+                                      "attributes": {
+                                        "backgroundColor": "",
+                                        "isLinkable": false,
+                                        "linkAssistiveText": "",
+                                        "paddingHorizontal": "none",
+                                        "paddingVertical": "none",
+                                        "text": "Items in Your Quote",
+                                        "textAlign": "left",
+                                        "textDecoration": "{\"bold\": true}",
+                                        "textDisplayInfo": "{\"textStyle\": \"heading-small\", \"headingTag\": \"h4\"}"
+                                      },
+                                      "definition": "dxp_base:textBlock",
+                                      "id": "4810d687-4d3d-43ac-acac-022413dff1bd",
+                                      "type": "component"
+                                    }
+                                  ],
+                                  "id": "e97276a4-044e-4ded-8962-555dfe7fdcbd",
+                                  "name": "header",
+                                  "title": "header",
+                                  "type": "region"
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "attributes": {
+                                        "backgroundColor": "",
+                                        "isLinkable": false,
+                                        "linkAssistiveText": "",
+                                        "paddingHorizontal": "none",
+                                        "paddingVertical": "none",
+                                        "text": "Show more",
+                                        "textAlign": "center",
+                                        "textDecoration": "{}",
+                                        "textDisplayInfo": "{\"textStyle\": \"body-regular\", \"headingTag\": \"p\"}"
+                                      },
+                                      "definition": "dxp_base:textBlock",
+                                      "id": "be7e67c3-1bc5-45a6-9fde-4e765e8970c6",
+                                      "type": "component"
+                                    }
+                                  ],
+                                  "id": "cd4dfb4d-6373-4361-8b60-dc5c58baf4de",
+                                  "name": "showMore",
+                                  "title": "showMore",
+                                  "type": "region"
+                                }
+                              ],
+                              "definition": "commerce_builder:quoteConfirmationItems",
+                              "id": "c2c371ee-14ca-4c67-924b-a7f6706e46fc",
+                              "type": "component"
+                            }
+                          ],
+                          "id": "806707eb-d24e-47c3-aa75-9d89d6ea3f61",
+                          "name": "col1",
+                          "title": "Column 1",
+                          "type": "region"
+                        },
+                        {
+                          "children": [
+                            {
+                              "attributes": {
+                                "notesData": "{!QuoteDetail.Notes}",
+                                "notesTitle": "Notes Exchange"
+                              },
+                              "definition": "commerce_builder:notesThread",
+                              "id": "0fa48917-a8a5-43d5-9939-21ec857db8fc",
+                              "type": "component"
+                            }
+                          ],
+                          "id": "04acedae-a48f-473f-95e2-37433d63970e",
+                          "name": "col2",
+                          "title": "Column 2",
+                          "type": "region"
+                        }
+                      ],
+                      "definition": "community_layout:section",
+                      "id": "b00dea00-c830-4f86-b67f-852eed23270a",
+                      "type": "component"
+                    }
+                  ],
+                  "id": "76b9bc97-3247-450e-b938-6217d125a0aa",
+                  "name": "content",
+                  "title": "content",
+                  "type": "region"
+                }
+              ],
+              "definition": "commerce_builder:quoteSummaryContentLayout",
+              "id": "449cecc5-bc29-4751-a8f1-f58ae7fe0fa1",
+              "type": "component"
+            }
+          ],
+          "id": "3363159d-392a-4738-8c9d-597d5c0d136c",
+          "name": "content",
+          "title": "Content",
+          "type": "region"
+        },
+        {
+          "children": [
+            {
+              "attributes": {
+                "recordId": "{!recordId}"
+              },
+              "definition": "community_builder:seoAssistant",
+              "id": "20229f47-e889-4374-aa38-a08f78a0700c",
+              "type": "component"
+            }
+          ],
+          "id": "f0e64a6f-d3fb-4c2f-befb-7206db7da8eb",
+          "name": "sfdcHiddenRegion",
+          "title": "sfdcHiddenRegion",
+          "type": "region"
+        }
+      ],
+      "definition": "community_layout:sldsFlexibleLayout",
+      "id": "f2a78d86-3e58-4574-b11c-97748e098580",
+      "type": "component"
+    },
+    "dataProviders": [
+      {
+        "definition": "sfdc_cms__commerceQuoteDetailDataProvider",
+        "sfdcExpressionKey": "QuoteDetail",
+        "attributes": {
+          "recordId": "{!Route.recordId}"
+        }
+      }
+    ],
+    "themeLayoutType": "MyAccount",
+    "viewType": "quote-summary"
+  },
+  "urlName": "quote-summary-details"
+}

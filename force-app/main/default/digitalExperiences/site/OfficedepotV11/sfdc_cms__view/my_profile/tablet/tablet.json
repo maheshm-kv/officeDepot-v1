@@ -1,0 +1,24 @@
+{
+  "type": "sfdc_cms__view",
+  "title": "My Profile",
+  "contentBody": {
+    "component": {
+      "children": [
+        {
+          "attributes": {
+            "dxpStyle": {
+              "padding": {
+                "bottom": "0.5rem",
+                "left": "0.75rem",
+                "right": "0.75rem",
+                "top": "0.5rem"
+              }
+            }
+          },
+          "id": "f65bb665-7391-43a2-b0e3-60fb6a867de8"
+        }
+      ]
+    }
+  },
+  "urlName": "my-profile"
+}

@@ -1,0 +1,30 @@
+{
+  "type": "sfdc_cms__view",
+  "title": "Quote",
+  "contentBody": {
+    "component": {
+      "children": [
+        {
+          "attributes": {
+            "textDisplayInfo": "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h2\"}"
+          },
+          "id": "8a6d3ceb-c09c-48d8-909c-6af3ccc2ee9c"
+        },
+        {
+          "attributes": {
+            "dxpStyle": {
+              "margin": {
+                "bottom": "0%",
+                "left": "0%",
+                "right": "0%",
+                "top": "0%"
+              }
+            }
+          },
+          "id": "adf02ba4-56d2-4bed-a4da-730262b4ad62"
+        }
+      ]
+    }
+  },
+  "urlName": "quote"
+}

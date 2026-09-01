@@ -1,0 +1,104 @@
+{
+  "type": "sfdc_cms__themeLayout",
+  "title": "Commerce Layout",
+  "contentBody": {
+    "component": {
+      "children": [
+        {
+          "attributes": {
+            "alignment": "left",
+            "logoWidth": "100"
+          },
+          "id": "44e8e249-6be0-4219-8116-701576dc5775"
+        },
+        {
+          "attributes": {
+            "dxpStyle": {
+              "padding": {
+                "bottom": "0%",
+                "left": "8%",
+                "right": "8%",
+                "top": "8%"
+              }
+            }
+          },
+          "id": "613e5ee1-4dd0-4983-9cba-ba766ed026f3"
+        },
+        {
+          "attributes": {
+            "dxpStyle": {
+              "padding": {
+                "bottom": "2rem",
+                "left": "0rem",
+                "right": "0rem",
+                "top": "0rem"
+              }
+            }
+          },
+          "id": "3ad3da7d-2c5a-4c72-81e0-7b8b34ed7587"
+        },
+        {
+          "attributes": {
+            "dxpStyle": {
+              "padding": {
+                "bottom": "3%",
+                "left": "8%",
+                "right": "8%",
+                "top": "1%"
+              }
+            },
+            "sectionColumnGutterWidth": "1.5rem"
+          },
+          "id": "3b6ecb5d-f041-4c1d-a48c-38552d9ee45d"
+        },
+        {
+          "attributes": {
+            "flexAlignment": "flex-start"
+          },
+          "id": "e8d4a178-8a4d-4860-ad85-bfbce5f0e7f0"
+        },
+        {
+          "attributes": {
+            "dxpStyle": {
+              "padding": {
+                "bottom": "8px",
+                "left": "0px",
+                "right": "0px",
+                "top": "8px"
+              }
+            },
+            "pickerButtonAlignment": "left"
+          },
+          "id": "fd5af161-ce5b-41b8-9bda-596a08aeaebd"
+        },
+        {
+          "attributes": {
+            "dxpStyle": {
+              "padding": {
+                "bottom": "3%",
+                "left": "8%",
+                "right": "8%",
+                "top": "3%"
+              }
+            }
+          },
+          "id": "4717e878-d69e-43ce-8018-e8b9a544a6b9"
+        },
+        {
+          "attributes": {
+            "dxpStyle": {
+              "padding": {
+                "bottom": "8%",
+                "left": "8%",
+                "right": "8%",
+                "top": "3%"
+              }
+            }
+          },
+          "id": "2dba960e-ed19-47dd-8cc0-6bde436575d2"
+        }
+      ]
+    }
+  },
+  "urlName": "commerce-layout"
+}

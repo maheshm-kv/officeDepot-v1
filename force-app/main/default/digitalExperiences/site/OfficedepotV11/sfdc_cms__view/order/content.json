@@ -1,0 +1,934 @@
+{
+  "type": "sfdc_cms__view",
+  "title": "Order",
+  "contentBody": {
+    "component": {
+      "children": [
+        {
+          "children": [
+            {
+              "attributes": {
+                "backgroundImageConfig": "",
+                "backgroundImageOverlay": "rgba(0,0,0,0)",
+                "componentSpacerSize": "",
+                "dxpStyle": {
+                  "padding": {
+                    "bottom": "0px",
+                    "left": "0px",
+                    "right": "0px",
+                    "top": "0px"
+                  }
+                },
+                "layoutDirectionDesktop": "row",
+                "layoutDirectionMobile": "column",
+                "layoutDirectionTablet": "column",
+                "maxContentWidth": "",
+                "sectionColumnGutterWidth": "",
+                "sectionConfig": "{\"UUID\":\"67af5360-2402-4688-8c54-c29d3d5e95a9\",\"columns\":[{\"UUID\":\"760739ab-58b1-4d32-8496-7f4b4d9a9994\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":null}]}",
+                "sectionMinHeight": "",
+                "sectionVerticalAlign": "flex-start"
+              },
+              "children": [
+                {
+                  "children": [
+                    {
+                      "attributes": {
+                        "clientState": "{!Order.ClientState}",
+                        "loaderAltText": "Loading order confirmation details..."
+                      },
+                      "children": [
+                        {
+                          "children": [
+                            {
+                              "attributes": {},
+                              "children": [
+                                {
+                                  "children": [
+                                    {
+                                      "attributes": {
+                                        "backgroundColor": "",
+                                        "isLinkable": false,
+                                        "linkAssistiveText": "",
+                                        "paddingHorizontal": "none",
+                                        "paddingVertical": "none",
+                                        "text": "Thank you for your purchase!",
+                                        "textAlign": "center",
+                                        "textDecoration": "{}",
+                                        "textDisplayInfo": "{\"textStyle\": \"heading-large\", \"headingTag\": \"h2\"}"
+                                      },
+                                      "definition": "dxp_base:textBlock",
+                                      "id": "47e8e92a-ab76-4687-9f97-70d8cdc6bda1",
+                                      "type": "component"
+                                    }
+                                  ],
+                                  "id": "66aa3396-13aa-481b-9415-5308466c5510",
+                                  "name": "title",
+                                  "title": "title",
+                                  "type": "region"
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "attributes": {
+                                        "backgroundColor": "",
+                                        "isLinkable": false,
+                                        "linkAssistiveText": "",
+                                        "paddingHorizontal": "none",
+                                        "paddingVertical": "none",
+                                        "text": "Your Order Number is {!Route.orderNumber}. Use this order number to track your purchase.",
+                                        "textAlign": "left",
+                                        "textDecoration": "{\"bold\": true}",
+                                        "textDisplayInfo": "{\"textStyle\": \"heading-small\", \"headingTag\": \"p\"}"
+                                      },
+                                      "definition": "dxp_base:textBlock",
+                                      "id": "34add318-6c50-4f8b-9bf2-305808a20296",
+                                      "type": "component"
+                                    },
+                                    {
+                                      "attributes": {
+                                        "backgroundColor": "",
+                                        "isLinkable": false,
+                                        "linkAssistiveText": "",
+                                        "paddingHorizontal": "none",
+                                        "paddingVertical": "none",
+                                        "text": "You'll receive an email with your order details soon.",
+                                        "textAlign": "left",
+                                        "textDecoration": "{\"bold\": false}",
+                                        "textDisplayInfo": "{\"textStyle\": \"heading-small\", \"headingTag\": \"p\"}"
+                                      },
+                                      "definition": "dxp_base:textBlock",
+                                      "id": "7d02c42e-892b-401e-b47f-b82105e88440",
+                                      "type": "component"
+                                    }
+                                  ],
+                                  "id": "d42be7f3-3bb1-47e9-8d59-2633c14edb35",
+                                  "name": "description",
+                                  "title": "description",
+                                  "type": "region"
+                                }
+                              ],
+                              "definition": "commerce_builder:orderConfirmationSuccessMessage",
+                              "id": "37aa8e81-9dd0-4e97-86ad-e01a067d184e",
+                              "type": "component"
+                            },
+                            {
+                              "attributes": {
+                                "alignment": "center",
+                                "dxpStyle": {
+                                  "margin": {
+                                    "bottom": "1rem",
+                                    "left": "0rem",
+                                    "right": "0rem",
+                                    "top": "1rem"
+                                  }
+                                },
+                                "lineStyle": "solid",
+                                "size": 2,
+                                "width": 100
+                              },
+                              "definition": "dxp_base:horizontalLine",
+                              "id": "bf047df5-c2d1-48f2-a86a-d060138bfe46",
+                              "type": "component"
+                            },
+                            {
+                              "attributes": {
+                                "autoScrollToMostRecent": false,
+                                "backgroundColor": "",
+                                "borderColor": "",
+                                "borderRadius": 0,
+                                "borderWidth": 0,
+                                "isOrderReversed": false,
+                                "itemSpacing": "none",
+                                "listType": "unformatted",
+                                "orderedMarkerAlignment": "middle",
+                                "orderedMarkerColor": "",
+                                "orderedMarkerSize": "body-regular",
+                                "orderedMarkerStartValue": 1,
+                                "orderedMarkerStyle": "numbers",
+                                "showPagination": false,
+                                "unorderedMarkerAlignment": "middle",
+                                "unorderedMarkerColor": "",
+                                "unorderedMarkerSize": "body-regular",
+                                "unorderedMarkerStyle": "filled-dots",
+                                "width": 100
+                              },
+                              "children": [
+                                {
+                                  "children": [
+                                    {
+                                      "attributes": {
+                                        "companyNameLabel": "Company Name",
+                                        "deliveryGroup": "{!DeliveryGroup}",
+                                        "deliveryTimelineLabel": "Arriving",
+                                        "emailAddressLabel": "Email ID",
+                                        "giftMessageLabel": "Gift Message",
+                                        "giftOrderLabel": "This is a gift",
+                                        "ownerInfo": "{!Order.Owner}",
+                                        "phoneNumberLabel": "Phone Number",
+                                        "shippingAddressLabel": "Shipping Address",
+                                        "shippingChargesLabel": "Shipping Charges",
+                                        "shippingMethodLabel": "Shipping Method"
+                                      },
+                                      "children": [
+                                        {
+                                          "children": [
+                                            {
+                                              "attributes": {
+                                                "backgroundColor": "",
+                                                "isLinkable": false,
+                                                "linkAssistiveText": "",
+                                                "paddingHorizontal": "none",
+                                                "paddingVertical": "none",
+                                                "text": "{!DeliveryGroup.fields.Name.text}",
+                                                "textAlign": "left",
+                                                "textDecoration": "{\"bold\": true}",
+                                                "textDisplayInfo": "{\"textStyle\": \"heading-small\", \"headingTag\": \"h2\"}"
+                                              },
+                                              "definition": "dxp_base:textBlock",
+                                              "id": "232ce5c0-286d-4e4b-84be-1db26a7cb75f",
+                                              "type": "component"
+                                            }
+                                          ],
+                                          "id": "873ba61e-34f1-479d-b7ad-c49f3358d148",
+                                          "name": "header",
+                                          "title": "header",
+                                          "type": "region"
+                                        },
+                                        {
+                                          "children": [
+                                            {
+                                              "attributes": {
+                                                "backgroundColor": "",
+                                                "isLinkable": false,
+                                                "linkAssistiveText": "",
+                                                "paddingHorizontal": "none",
+                                                "paddingVertical": "none",
+                                                "text": "Gifting",
+                                                "textAlign": "left",
+                                                "textDecoration": "{\"bold\": true}",
+                                                "textDisplayInfo": "{\"textStyle\": \"heading-small\", \"headingTag\": \"h2\"}"
+                                              },
+                                              "definition": "dxp_base:textBlock",
+                                              "id": "45d27319-b160-4f11-94e2-5cd6adb272f9",
+                                              "type": "component"
+                                            }
+                                          ],
+                                          "id": "a2729a45-cbc2-48eb-8350-5d854bdb8b09",
+                                          "name": "giftingHeader",
+                                          "title": "giftingHeader",
+                                          "type": "region"
+                                        },
+                                        {
+                                          "children": [
+                                            {
+                                              "attributes": {
+                                                "currencyIsoCode": "{!DeliveryGroup.currencyIsoCode}",
+                                                "deliveryGroupId": "{!DeliveryGroup.id}",
+                                                "imageAspectRatio": "1",
+                                                "imageSize": "contain",
+                                                "items": "{!DeliveryGroup.lineItems}",
+                                                "pageSize": 10,
+                                                "productDetailsPillBackgroundColor": "rgb(217, 223, 231)",
+                                                "productDetailsPillBorderColor": "rgb(217, 223, 231)",
+                                                "productDetailsPillBorderRadius": 8,
+                                                "productDetailsPillFontSize": "small",
+                                                "showProductImage": true,
+                                                "showViewBundleDetail": false,
+                                                "viewBundleDetailLabel": "View Details"
+                                              },
+                                              "children": [
+                                                {
+                                                  "children": [
+                                                    {
+                                                      "attributes": {
+                                                        "backgroundColor": "",
+                                                        "isLinkable": false,
+                                                        "linkAssistiveText": "",
+                                                        "paddingHorizontal": "none",
+                                                        "paddingVertical": "none",
+                                                        "text": "Items Ordered",
+                                                        "textAlign": "left",
+                                                        "textDecoration": "{\"bold\": true}",
+                                                        "textDisplayInfo": "{\"textStyle\": \"heading-small\", \"headingTag\": \"h4\"}"
+                                                      },
+                                                      "definition": "dxp_base:textBlock",
+                                                      "id": "ad50923c-3468-4d72-a878-5a2f5e5ff4b6",
+                                                      "type": "component"
+                                                    }
+                                                  ],
+                                                  "id": "3fc6825b-a8b1-494a-af33-3aabd3c9a63c",
+                                                  "name": "header",
+                                                  "title": "header",
+                                                  "type": "region"
+                                                },
+                                                {
+                                                  "children": [
+                                                    {
+                                                      "attributes": {
+                                                        "backgroundColor": "",
+                                                        "isLinkable": false,
+                                                        "linkAssistiveText": "",
+                                                        "paddingHorizontal": "none",
+                                                        "paddingVertical": "none",
+                                                        "text": "Show more",
+                                                        "textAlign": "center",
+                                                        "textDecoration": "{}",
+                                                        "textDisplayInfo": "{\"textStyle\": \"body-regular\", \"headingTag\": \"p\"}"
+                                                      },
+                                                      "definition": "dxp_base:textBlock",
+                                                      "id": "9a178f44-f55f-403e-b382-ce31868ba91d",
+                                                      "type": "component"
+                                                    }
+                                                  ],
+                                                  "id": "320689e5-4fc2-4f6b-aebb-111b3644ca5c",
+                                                  "name": "showMore",
+                                                  "title": "showMore",
+                                                  "type": "region"
+                                                }
+                                              ],
+                                              "definition": "commerce_builder:orderConfirmationItems",
+                                              "id": "64f9ebcc-e29e-4882-8ca9-5da51800039e",
+                                              "type": "component"
+                                            }
+                                          ],
+                                          "id": "d68bcb62-e8d1-4fb6-87ef-12cc5201db1e",
+                                          "name": "deliveryItems",
+                                          "title": "deliveryItems",
+                                          "type": "region"
+                                        }
+                                      ],
+                                      "definition": "commerce_builder:orderConfirmationDeliveryGroup",
+                                      "id": "81ff702c-df3a-4658-8ed4-4d828099734f",
+                                      "type": "component"
+                                    },
+                                    {
+                                      "attributes": {
+                                        "alignment": "center",
+                                        "dxpStyle": {
+                                          "margin": {
+                                            "bottom": "1rem",
+                                            "left": "0rem",
+                                            "right": "0rem",
+                                            "top": "1rem"
+                                          }
+                                        },
+                                        "lineStyle": "solid",
+                                        "size": 2,
+                                        "width": 100
+                                      },
+                                      "definition": "dxp_base:horizontalLine",
+                                      "id": "66d44331-33a8-4699-a0d0-dc414b8eb9f0",
+                                      "type": "component"
+                                    }
+                                  ],
+                                  "id": "789e865a-fbdd-4288-8c10-bdd18f98a81c",
+                                  "name": "sfdcRepeaterItem",
+                                  "title": "sfdcRepeaterItem",
+                                  "type": "region"
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "attributes": {
+                                        "variant": "showmore"
+                                      },
+                                      "children": [
+                                        {
+                                          "children": [
+                                            {
+                                              "attributes": {},
+                                              "definition": "dxp_page_layout:placeHolder",
+                                              "id": "91354e76-829b-436e-8eb8-95b6c4d1eab1",
+                                              "type": "component"
+                                            }
+                                          ],
+                                          "id": "9d3900ea-23ab-4966-822e-428adb0057c1",
+                                          "name": "placeholder",
+                                          "title": "placeholder",
+                                          "type": "region"
+                                        }
+                                      ],
+                                      "definition": "dxp_content_layout:paginator2",
+                                      "id": "d25f102b-0f30-46ef-93fe-6ecf8f8bcaae",
+                                      "type": "component"
+                                    }
+                                  ],
+                                  "id": "85c1959b-547e-4e6b-9c11-d3120d039def",
+                                  "name": "pagination",
+                                  "title": "pagination",
+                                  "type": "region"
+                                }
+                              ],
+                              "definition": "dxp_content_layout:list",
+                              "id": "cbcf6778-f1a6-47a5-8836-0596fd3db386",
+                              "type": "component",
+                              "dataProviders": [
+                                {
+                                  "definition": "sfdc_cms__expressionDataProvider",
+                                  "sfdcExpressionKey": "DeliveryGroup",
+                                  "attributes": {
+                                    "listSource": "{!Order.DeliveryGroups}"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "attributes": {
+                                "autoScrollToMostRecent": false,
+                                "backgroundColor": "",
+                                "borderColor": "",
+                                "borderRadius": 0,
+                                "borderWidth": 0,
+                                "isOrderReversed": false,
+                                "itemSpacing": "none",
+                                "listType": "unformatted",
+                                "orderedMarkerAlignment": "middle",
+                                "orderedMarkerColor": "",
+                                "orderedMarkerSize": "body-regular",
+                                "orderedMarkerStartValue": 1,
+                                "orderedMarkerStyle": "numbers",
+                                "showPagination": false,
+                                "unorderedMarkerAlignment": "middle",
+                                "unorderedMarkerColor": "",
+                                "unorderedMarkerSize": "body-regular",
+                                "unorderedMarkerStyle": "filled-dots",
+                                "width": 100
+                              },
+                              "children": [
+                                {
+                                  "children": [
+                                    {
+                                      "attributes": {
+                                        "billingAddressLabel": "Billing Address",
+                                        "billingDetails": "{!BillingDetails}",
+                                        "emailAddressLabel": "Email ID",
+                                        "ownerInfo": "{!Order.Owner}",
+                                        "paymentMethodLabel": "Payment Method"
+                                      },
+                                      "children": [
+                                        {
+                                          "children": [
+                                            {
+                                              "attributes": {
+                                                "backgroundColor": "",
+                                                "isLinkable": false,
+                                                "linkAssistiveText": "",
+                                                "paddingHorizontal": "none",
+                                                "paddingVertical": "none",
+                                                "text": "Billing Details",
+                                                "textAlign": "left",
+                                                "textDecoration": "{\"bold\": true}",
+                                                "textDisplayInfo": "{\"textStyle\": \"heading-small\", \"headingTag\": \"h2\"}"
+                                              },
+                                              "definition": "dxp_base:textBlock",
+                                              "id": "a90098f0-de60-4538-8266-811e60cd9c7e",
+                                              "type": "component"
+                                            }
+                                          ],
+                                          "id": "0ce00fde-072e-4177-a196-bc7051b2c839",
+                                          "name": "header",
+                                          "title": "header",
+                                          "type": "region"
+                                        }
+                                      ],
+                                      "definition": "commerce_builder:orderConfirmationBillingDetails",
+                                      "id": "1e394472-da24-45e7-9ed4-46d645c656c4",
+                                      "type": "component"
+                                    }
+                                  ],
+                                  "id": "741366d6-3539-4b1a-998d-9ad4b57751ff",
+                                  "name": "sfdcRepeaterItem",
+                                  "title": "sfdcRepeaterItem",
+                                  "type": "region"
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "attributes": {
+                                        "variant": "showmore"
+                                      },
+                                      "children": [
+                                        {
+                                          "children": [
+                                            {
+                                              "attributes": {},
+                                              "definition": "dxp_page_layout:placeHolder",
+                                              "id": "ad02969f-d14d-4718-b2ad-2177da790f0c",
+                                              "type": "component"
+                                            }
+                                          ],
+                                          "id": "3a39d152-e8dd-43ea-9ad4-c99ccd7d6f6f",
+                                          "name": "placeholder",
+                                          "title": "placeholder",
+                                          "type": "region"
+                                        }
+                                      ],
+                                      "definition": "dxp_content_layout:paginator2",
+                                      "id": "65f94bf9-5a31-4c80-870a-31a282b0a01c",
+                                      "type": "component"
+                                    }
+                                  ],
+                                  "id": "1b060723-71e9-49d4-9606-addb6847e64a",
+                                  "name": "pagination",
+                                  "title": "pagination",
+                                  "type": "region"
+                                }
+                              ],
+                              "definition": "dxp_content_layout:list",
+                              "id": "33a91f2b-ed6d-4e96-9313-451c04673d57",
+                              "type": "component",
+                              "dataProviders": [
+                                {
+                                  "definition": "sfdc_cms__expressionDataProvider",
+                                  "sfdcExpressionKey": "BillingDetails",
+                                  "attributes": {
+                                    "listSource": "{!Order.Payments}"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "attributes": {
+                                "alignment": "center",
+                                "dxpStyle": {
+                                  "margin": {
+                                    "bottom": "1rem",
+                                    "left": "0rem",
+                                    "right": "0rem",
+                                    "top": "1rem"
+                                  }
+                                },
+                                "lineStyle": "solid",
+                                "size": 2,
+                                "width": 100
+                              },
+                              "definition": "dxp_base:horizontalLine",
+                              "id": "40d7dd03-63c4-4a6d-91d4-639db695f0ca",
+                              "type": "component"
+                            },
+                            {
+                              "attributes": {
+                                "alignment": "right",
+                                "size": "standard",
+                                "stretch": "standard",
+                                "text": "Continue Shopping",
+                                "type": "primary",
+                                "url": "{\"linkInfo\":{\"pageReference\":{\"type\":\"comm__namedPage\",\"attributes\":{\"name\":\"Home\"}}}}"
+                              },
+                              "definition": "dxp_base:button",
+                              "id": "cd15da25-d004-4754-8113-96df0f4e3faa",
+                              "type": "component"
+                            }
+                          ],
+                          "id": "6892fca6-8e62-4f88-813d-ecd9d2477a45",
+                          "name": "content",
+                          "title": "content",
+                          "type": "region"
+                        },
+                        {
+                          "children": [
+                            {
+                              "attributes": {
+                                "discountAmountTextSize": "small",
+                                "originalTextSize": "small",
+                                "shippingTextSize": "small",
+                                "showDiscountAmount": true,
+                                "showOriginalPrice": true,
+                                "showShippingPrice": true,
+                                "showSubtotalPrice": true,
+                                "showTaxIncludedLabel": false,
+                                "showTaxPrice": true,
+                                "subtotalTextSize": "small",
+                                "summary": "{!Order.Details}",
+                                "taxTextSize": "small",
+                                "totalTextSize": "small"
+                              },
+                              "children": [
+                                {
+                                  "children": [
+                                    {
+                                      "attributes": {
+                                        "backgroundColor": "",
+                                        "isLinkable": false,
+                                        "linkAssistiveText": "",
+                                        "paddingHorizontal": "none",
+                                        "paddingVertical": "none",
+                                        "text": "Total Paid",
+                                        "textAlign": "left",
+                                        "textDecoration": "{}",
+                                        "textDisplayInfo": "{\"textStyle\": \"heading-medium\", \"headingTag\": \"h2\"}"
+                                      },
+                                      "definition": "dxp_base:textBlock",
+                                      "id": "2cb94443-adb8-49b9-997e-a7fbcb08446a",
+                                      "type": "component"
+                                    }
+                                  ],
+                                  "id": "e2d15efd-11fa-4d64-8e9a-3242775877c1",
+                                  "name": "headerText",
+                                  "title": "Heading",
+                                  "type": "region"
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "attributes": {
+                                        "backgroundColor": "",
+                                        "isLinkable": false,
+                                        "linkAssistiveText": "",
+                                        "paddingHorizontal": "none",
+                                        "paddingVertical": "none",
+                                        "text": "Original Price",
+                                        "textAlign": "left",
+                                        "textDecoration": "{}",
+                                        "textDisplayInfo": "{\"headingTag\": \"p\", \"textStyle\": \"heading-small\"}"
+                                      },
+                                      "definition": "dxp_base:textBlock",
+                                      "id": "c2954b02-57a7-4fb7-80ae-98aff4b3eb42",
+                                      "type": "component"
+                                    }
+                                  ],
+                                  "id": "4a4de28b-c820-48b4-ac23-b0e6ba932af9",
+                                  "name": "originalPriceLabel",
+                                  "title": "originalPriceLabel",
+                                  "type": "region"
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "attributes": {
+                                        "backgroundColor": "",
+                                        "isLinkable": false,
+                                        "linkAssistiveText": "",
+                                        "paddingHorizontal": "none",
+                                        "paddingVertical": "none",
+                                        "text": "Promotions",
+                                        "textAlign": "left",
+                                        "textDecoration": "{}",
+                                        "textDisplayInfo": "{\"headingTag\": \"p\", \"textStyle\": \"heading-small\"}"
+                                      },
+                                      "definition": "dxp_base:textBlock",
+                                      "id": "17f371a6-dab6-469c-87de-0a51da2547bc",
+                                      "type": "component"
+                                    }
+                                  ],
+                                  "id": "0d46b669-41a7-419a-89f6-76c56adbf1be",
+                                  "name": "promotionsLabel",
+                                  "title": "promotionsLabel",
+                                  "type": "region"
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "attributes": {
+                                        "backgroundColor": "",
+                                        "isLinkable": false,
+                                        "linkAssistiveText": "",
+                                        "paddingHorizontal": "none",
+                                        "paddingVertical": "none",
+                                        "text": "Shipping",
+                                        "textAlign": "left",
+                                        "textDecoration": "{}",
+                                        "textDisplayInfo": "{\"headingTag\": \"p\", \"textStyle\": \"heading-small\"}"
+                                      },
+                                      "definition": "dxp_base:textBlock",
+                                      "id": "3ae1053a-0dfb-4615-a295-f94331fb31a8",
+                                      "type": "component"
+                                    }
+                                  ],
+                                  "id": "eceb8df6-8398-490d-b503-747d12cf0d65",
+                                  "name": "shippingLabel",
+                                  "title": "shippingLabel",
+                                  "type": "region"
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "attributes": {
+                                        "backgroundColor": "",
+                                        "isLinkable": false,
+                                        "linkAssistiveText": "",
+                                        "paddingHorizontal": "none",
+                                        "paddingVertical": "none",
+                                        "text": "Subtotal",
+                                        "textAlign": "left",
+                                        "textDecoration": "{}",
+                                        "textDisplayInfo": "{\"headingTag\": \"p\", \"textStyle\": \"heading-small\"}"
+                                      },
+                                      "definition": "dxp_base:textBlock",
+                                      "id": "11cb0859-5720-4e5c-a739-1e6e37efddbf",
+                                      "type": "component"
+                                    }
+                                  ],
+                                  "id": "594f8b2b-d922-46c9-ad8c-2f82cd5ea042",
+                                  "name": "subtotalLabel",
+                                  "title": "subtotalLabel",
+                                  "type": "region"
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "attributes": {
+                                        "backgroundColor": "",
+                                        "isLinkable": false,
+                                        "linkAssistiveText": "",
+                                        "paddingHorizontal": "none",
+                                        "paddingVertical": "none",
+                                        "text": "Tax included",
+                                        "textAlign": "right",
+                                        "textDecoration": "{}",
+                                        "textDisplayInfo": "{\"headingTag\": \"p\", \"textStyle\": \"heading-small\"}"
+                                      },
+                                      "definition": "dxp_base:textBlock",
+                                      "id": "90ce40b8-a3e1-4f31-9586-ecf641f400e4",
+                                      "type": "component"
+                                    }
+                                  ],
+                                  "id": "62a6d8bb-12dc-4a51-afcb-3c43698911fb",
+                                  "name": "taxIncludedLabel",
+                                  "title": "taxIncludedLabel",
+                                  "type": "region"
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "attributes": {
+                                        "backgroundColor": "",
+                                        "isLinkable": false,
+                                        "linkAssistiveText": "",
+                                        "paddingHorizontal": "none",
+                                        "paddingVertical": "none",
+                                        "text": "Tax",
+                                        "textAlign": "left",
+                                        "textDecoration": "{}",
+                                        "textDisplayInfo": "{\"headingTag\": \"p\", \"textStyle\": \"heading-small\"}"
+                                      },
+                                      "definition": "dxp_base:textBlock",
+                                      "id": "98c676cf-59f9-4cdd-b006-d360b38ef31b",
+                                      "type": "component"
+                                    }
+                                  ],
+                                  "id": "bfd77c27-0c21-4383-8a51-907f2a619da7",
+                                  "name": "taxLabel",
+                                  "title": "taxLabel",
+                                  "type": "region"
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "attributes": {
+                                        "backgroundColor": "",
+                                        "isLinkable": false,
+                                        "linkAssistiveText": "",
+                                        "paddingHorizontal": "none",
+                                        "paddingVertical": "none",
+                                        "text": "Total",
+                                        "textAlign": "left",
+                                        "textDecoration": "{\"bold\": true}",
+                                        "textDisplayInfo": "{ \"headingTag\": \"p\", \"textStyle\": \"heading-small\"}"
+                                      },
+                                      "definition": "dxp_base:textBlock",
+                                      "id": "92fab6c2-b442-4a04-9a31-df71dcb6f9da",
+                                      "type": "component"
+                                    }
+                                  ],
+                                  "id": "7fe4ed95-97c7-4155-9f65-26c0af4dd0da",
+                                  "name": "totalLabel",
+                                  "title": "totalLabel",
+                                  "type": "region"
+                                }
+                              ],
+                              "definition": "commerce_builder:orderConfirmationTotalsSummary",
+                              "id": "1cc9d4d9-b816-443e-80c4-bb452e433ba5",
+                              "type": "component"
+                            },
+                            {
+                              "attributes": {
+                                "alignment": "center",
+                                "dxpStyle": {
+                                  "margin": {
+                                    "bottom": "1rem",
+                                    "left": "0rem",
+                                    "right": "0rem",
+                                    "top": "1rem"
+                                  }
+                                },
+                                "lineStyle": "solid",
+                                "size": 2,
+                                "width": 100
+                              },
+                              "definition": "dxp_base:horizontalLine",
+                              "id": "9f4fb618-0ceb-4c65-9819-627bc95e4b1b",
+                              "type": "component"
+                            },
+                            {
+                              "attributes": {
+                                "appliedPromotions": "{!Order.Adjustments}"
+                              },
+                              "children": [
+                                {
+                                  "children": [
+                                    {
+                                      "attributes": {
+                                        "backgroundColor": "",
+                                        "isLinkable": false,
+                                        "linkAssistiveText": "",
+                                        "paddingHorizontal": "none",
+                                        "paddingVertical": "none",
+                                        "text": "Promotions Applied",
+                                        "textAlign": "left",
+                                        "textDecoration": "{\"bold\": false}",
+                                        "textDisplayInfo": "{\"textStyle\": \"heading-small\", \"headingTag\": \"h4\"}"
+                                      },
+                                      "definition": "dxp_base:textBlock",
+                                      "id": "f8c7b597-b227-4224-a4ad-f83ec3468b20",
+                                      "type": "component"
+                                    }
+                                  ],
+                                  "id": "1e56acd8-7c56-456f-9e33-f52a3c0cc824",
+                                  "name": "promotionsTitle",
+                                  "title": "promotionsTitle",
+                                  "type": "region"
+                                }
+                              ],
+                              "definition": "commerce_builder:orderPromotionsSummary",
+                              "id": "84ded6df-c901-4b49-8c4d-43cfcb205487",
+                              "type": "component"
+                            },
+                            {
+                              "attributes": {
+                                "alignment": "center",
+                                "dxpStyle": {
+                                  "isVisible": false
+                                },
+                                "size": "standard",
+                                "stretch": "stretch",
+                                "text": "Continue Shopping",
+                                "type": "primary",
+                                "url": "{\"linkInfo\":{\"pageReference\":{\"type\":\"comm__namedPage\",\"attributes\":{\"name\":\"Home\"}}}}"
+                              },
+                              "definition": "dxp_base:button",
+                              "id": "ce448c65-f923-4feb-afc8-fe155492d446",
+                              "type": "component"
+                            }
+                          ],
+                          "id": "2d1d24ae-2d7c-4b0d-be68-8e3815e93cb3",
+                          "name": "summary",
+                          "title": "summary",
+                          "type": "region"
+                        },
+                        {
+                          "children": [
+                            {
+                              "attributes": {
+                                "authUserButtonText": "View Order History",
+                                "guestUserButtonText": "Find My Order"
+                              },
+                              "children": [
+                                {
+                                  "children": [
+                                    {
+                                      "attributes": {
+                                        "backgroundColor": "",
+                                        "isLinkable": false,
+                                        "linkAssistiveText": "",
+                                        "paddingHorizontal": "none",
+                                        "paddingVertical": "none",
+                                        "text": "Oops! This page isn't available.",
+                                        "textAlign": "center",
+                                        "textDecoration": "{\"bold\": true}",
+                                        "textDisplayInfo": "{\"textStyle\": \"heading-medium\", \"headingTag\": \"h1\"}"
+                                      },
+                                      "definition": "dxp_base:textBlock",
+                                      "id": "1ce0589f-dfee-4821-b667-cbad61db91e8",
+                                      "type": "component"
+                                    },
+                                    {
+                                      "attributes": {
+                                        "backgroundColor": "",
+                                        "isLinkable": false,
+                                        "linkAssistiveText": "",
+                                        "paddingHorizontal": "none",
+                                        "paddingVertical": "x-small",
+                                        "text": "But no worries! You can still find your order details.",
+                                        "textAlign": "center",
+                                        "textDecoration": "{\"bold\": false}",
+                                        "textDisplayInfo": "{\"textStyle\": \"heading-medium\", \"headingTag\": \"p\"}"
+                                      },
+                                      "definition": "dxp_base:textBlock",
+                                      "id": "908e1cd9-6957-41eb-9a9a-12a3662af02b",
+                                      "type": "component"
+                                    }
+                                  ],
+                                  "id": "a4be74e1-2b6b-47de-8a01-0a479856605b",
+                                  "name": "errorMessageText",
+                                  "title": "errorMessageText",
+                                  "type": "region"
+                                }
+                              ],
+                              "definition": "commerce_builder:orderConfirmationErrorMessage",
+                              "id": "51360491-f33a-4976-bbaf-eaed92a403f2",
+                              "type": "component"
+                            }
+                          ],
+                          "id": "10d89d6a-e175-412c-8526-03492bae683f",
+                          "name": "error",
+                          "title": "error",
+                          "type": "region"
+                        }
+                      ],
+                      "definition": "commerce_builder:orderConfirmationContentLayout",
+                      "id": "871c282d-71aa-4f80-a7e8-add9caaed907",
+                      "type": "component"
+                    }
+                  ],
+                  "id": "760739ab-58b1-4d32-8496-7f4b4d9a9994",
+                  "name": "col1",
+                  "title": "Column 1",
+                  "type": "region"
+                }
+              ],
+              "definition": "community_layout:section",
+              "id": "67af5360-2402-4688-8c54-c29d3d5e95a9",
+              "type": "component"
+            }
+          ],
+          "id": "816f4673-89f8-4431-8c71-647e8d4e574a",
+          "name": "content",
+          "title": "Content",
+          "type": "region"
+        },
+        {
+          "children": [
+            {
+              "attributes": {
+                "recordId": "{!recordId}"
+              },
+              "definition": "community_builder:seoAssistant",
+              "id": "449489a1-c9fd-440b-98f3-4c505bfe234a",
+              "type": "component"
+            }
+          ],
+          "id": "91835c78-7ed9-4121-9c08-a8d074bed8db",
+          "name": "sfdcHiddenRegion",
+          "title": "sfdcHiddenRegion",
+          "type": "region"
+        }
+      ],
+      "definition": "community_layout:sldsFlexibleLayout",
+      "id": "096e1e15-121d-4cfc-bf77-ab199e1434b9",
+      "type": "component"
+    },
+    "dataProviders": [
+      {
+        "definition": "sfdc_cms__commerceOrderDetailDataProvider",
+        "sfdcExpressionKey": "Order",
+        "attributes": {
+          "recordId": "{!Route.orderNumber}"
+        }
+      }
+    ],
+    "themeLayoutType": "Inner",
+    "viewType": "order"
+  },
+  "urlName": "order"
+}

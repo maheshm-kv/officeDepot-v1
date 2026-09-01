@@ -1,0 +1,41 @@
+{
+  "type": "sfdc_cms__view",
+  "title": "Order",
+  "contentBody": {
+    "component": {
+      "children": [
+        {
+          "attributes": {
+            "dxpStyle": {
+              "isVisible": false
+            }
+          },
+          "id": "40d7dd03-63c4-4a6d-91d4-639db695f0ca"
+        },
+        {
+          "attributes": {
+            "dxpStyle": {
+              "isVisible": false
+            }
+          },
+          "id": "cd15da25-d004-4754-8113-96df0f4e3faa"
+        },
+        {
+          "attributes": {
+            "textDisplayInfo": "{\"textStyle\":\"heading-small\",\"headingTag\":\"h2\"}"
+          },
+          "id": "2cb94443-adb8-49b9-997e-a7fbcb08446a"
+        },
+        {
+          "attributes": {
+            "dxpStyle": {
+              "isVisible": true
+            }
+          },
+          "id": "ce448c65-f923-4feb-afc8-fe155492d446"
+        }
+      ]
+    }
+  },
+  "urlName": "order"
+}

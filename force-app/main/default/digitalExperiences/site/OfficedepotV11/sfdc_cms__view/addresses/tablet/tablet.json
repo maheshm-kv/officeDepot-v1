@@ -1,0 +1,37 @@
+{
+  "type": "sfdc_cms__view",
+  "title": "Address List",
+  "contentBody": {
+    "component": {
+      "children": [
+        {
+          "attributes": {
+            "dxpStyle": {
+              "padding": {
+                "bottom": "0.5rem",
+                "left": "0.75rem",
+                "right": "0.75rem",
+                "top": "0.5rem"
+              }
+            }
+          },
+          "id": "26555193-8b0d-4d7a-8d07-38225ceeb08d"
+        },
+        {
+          "attributes": {
+            "dxpStyle": {
+              "padding": {
+                "bottom": "0.5rem",
+                "left": "0.75rem",
+                "right": "0.75rem",
+                "top": "0.5rem"
+              }
+            }
+          },
+          "id": "3fbb77a4-86c4-419c-967a-bede844bd217"
+        }
+      ]
+    }
+  },
+  "urlName": "address-list"
+}

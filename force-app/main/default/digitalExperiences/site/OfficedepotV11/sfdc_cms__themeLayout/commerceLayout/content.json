@@ -1,0 +1,747 @@
+{
+  "type": "sfdc_cms__themeLayout",
+  "title": "Commerce Layout",
+  "contentBody": {
+    "component": {
+      "attributes": {},
+      "children": [
+        {
+          "children": [
+            {
+              "attributes": {},
+              "children": [
+                {
+                  "children": [
+                    {
+                      "attributes": {
+                        "columnGutterWidth": "",
+                        "columnMinHeight": "",
+                        "columnVerticalAlign": "flex-start",
+                        "layoutDirectionDesktop": "row",
+                        "layoutDirectionMobile": "column",
+                        "layoutDirectionTablet": "column",
+                        "sectionConfig": "{\"UUID\":\"941dbad3-4399-4b1d-a42f-b674a7bdc061\",\"columns\":[{\"UUID\":\"8e86f7f7-4447-4400-9bb9-2a2472ac1fc2\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":null}]}"
+                      },
+                      "children": [
+                        {
+                          "children": [
+                            {
+                              "attributes": {
+                                "imageInfos": "",
+                                "richTextValue": "<div style=\"background-color:#1C1C1C; padding:0.625rem;\"><p style=\"text-align: center; color: #fff; font-family: Poppins;\">Exclusive winter sale ends this Friday. <a style=\"color: #fff; text-decoration: underline;\" href=\"/category/products\" target=\"_blank\">View Sale</a></p></div>"
+                              },
+                              "definition": "community_builder:htmlEditor",
+                              "id": "ebdcc53a-baef-4e5a-b907-2e0d71d9c8ed",
+                              "type": "component"
+                            }
+                          ],
+                          "id": "8e86f7f7-4447-4400-9bb9-2a2472ac1fc2",
+                          "name": "col1",
+                          "title": "Column 1",
+                          "type": "region"
+                        }
+                      ],
+                      "definition": "dxp_layout:columns",
+                      "id": "941dbad3-4399-4b1d-a42f-b674a7bdc061",
+                      "type": "component"
+                    }
+                  ],
+                  "id": "faf43120-2cd6-45fe-9b28-997bc793c29a",
+                  "name": "promoBanner",
+                  "title": "promoBanner",
+                  "type": "region"
+                },
+                {
+                  "children": [
+                    {
+                      "attributes": {
+                        "alignment": "left",
+                        "imageInfo": "",
+                        "imageInfoMobile": "",
+                        "logoWidth": 250
+                      },
+                      "definition": "dxp_content_layout:siteLogo",
+                      "id": "44e8e249-6be0-4219-8116-701576dc5775",
+                      "type": "component"
+                    }
+                  ],
+                  "id": "88d263b2-03a8-4652-91fc-4a5fe9a0d4fb",
+                  "name": "storeLogo",
+                  "title": "Logo",
+                  "type": "region"
+                },
+                {
+                  "children": [
+                    {
+                      "attributes": {
+                        "menuHorizontalAlignment": "left",
+                        "menuItemTextStyle": "body-regular",
+                        "menuItemTextStyleFontSize": "",
+                        "menuItemTextStyleFontWeight": "",
+                        "menuItemTextStyleOverride": false,
+                        "mobileMenuItemTextStyle": "body-regular",
+                        "mobileMenuItemTextStyleFontSize": "",
+                        "mobileMenuItemTextStyleFontWeight": "",
+                        "mobileMenuItemTextStyleOverride": false,
+                        "mobileNavItemTextStyle": "heading-small",
+                        "mobileNavItemTextStyleFontSize": "",
+                        "mobileNavItemTextStyleFontWeight": "",
+                        "mobileNavItemTextStyleOverride": false,
+                        "mobileSubHeadingTextStyle": "heading-medium",
+                        "mobileSubHeadingTextStyleFontSize": "",
+                        "mobileSubHeadingTextStyleFontWeight": "",
+                        "mobileSubHeadingTextStyleOverride": false,
+                        "navItemTextStyle": "heading-small",
+                        "navItemTextStyleFontSize": "",
+                        "navItemTextStyleFontWeight": "600",
+                        "navItemTextStyleOverride": true,
+                        "navigationMenuData": "{!NavMenu.MenuItems}",
+                        "showHomeLink": true,
+                        "showLogo": true,
+                        "showMyAccountMenu": true,
+                        "subHeadingTextStyle": "heading-small",
+                        "subHeadingTextStyleFontSize": "",
+                        "subHeadingTextStyleFontWeight": "600",
+                        "subHeadingTextStyleOverride": true,
+                        "verticalSpaceBetweenMenuItems": "16px"
+                      },
+                      "children": [
+                        {
+                          "children": [
+                            {
+                              "attributes": {
+                                "alignment": "left",
+                                "imageInfo": "",
+                                "imageInfoMobile": "",
+                                "logoWidth": 150
+                              },
+                              "definition": "dxp_content_layout:siteLogo",
+                              "id": "8259241b-6fc1-4e7d-9c0d-bb3512a4ea12",
+                              "type": "component"
+                            }
+                          ],
+                          "id": "d2312ecc-aa54-41ac-97a2-f8ee980d6651",
+                          "name": "mobileMenuLogo",
+                          "title": "Logo",
+                          "type": "region"
+                        },
+                        {
+                          "children": [
+                            {
+                              "attributes": {
+                                "descriptionText": "Become a member for the best prices.",
+                                "logInLabel": "Log In",
+                                "logOutLabel": "Log Out",
+                                "navigationMenuData": "{!NavMenu.MenuItems}",
+                                "navigationMenuEditor": "Default_My_Account_Menu7",
+                                "parentTabLabel": "My Account",
+                                "showLogInButton": true,
+                                "showSignUpButton": true,
+                                "signUpLabel": "Sign Up"
+                              },
+                              "definition": "commerce_builder:myAccountMegaMenu",
+                              "id": "5e6f3751-d3e2-416a-948b-693c0f2d2c12",
+                              "type": "component"
+                            }
+                          ],
+                          "id": "23ca3a57-0e8e-48e7-bead-2e63e9539637",
+                          "name": "mobileMyAccountNavMenu",
+                          "title": "My Account Menu",
+                          "type": "region"
+                        }
+                      ],
+                      "definition": "experience:megaMenuNavigation",
+                      "id": "dda04f58-b5ea-425c-921f-07fce49e212b",
+                      "type": "component"
+                    }
+                  ],
+                  "id": "292a063d-52d1-419a-ba65-78c0d20b5efa",
+                  "name": "navigation",
+                  "title": "Navigation Menu",
+                  "type": "region"
+                },
+                {
+                  "children": [
+                    {
+                      "attributes": {
+                        "bestSellerHeaderText": "Bestsellers",
+                        "borderRadius": 50,
+                        "enableProductSuggestions": false,
+                        "enableSearchSuggestions": true,
+                        "placeholderText": "Search",
+                        "recentSearchHeaderText": "Recent searches",
+                        "suggestedProductsHeaderText": "Suggested products",
+                        "suggestedSearchesHeaderText": "Suggested searches"
+                      },
+                      "definition": "commerce_builder:searchInputContainer",
+                      "id": "4468256a-938f-430f-a6a5-cd840ad2ff3d",
+                      "type": "component"
+                    }
+                  ],
+                  "id": "7b6c9c0d-0873-4b6c-9ba5-f44f551ceda3",
+                  "name": "searchInput",
+                  "title": "Search",
+                  "type": "region"
+                },
+                {
+                  "id": "cbeb613c-57e0-4a5a-a3e4-ef01c4a79d61",
+                  "name": "shopperCopilot",
+                  "title": "shopperCopilot",
+                  "type": "region"
+                },
+                {
+                  "children": [
+                    {
+                      "attributes": {
+                        "iconStyle": "userIcon",
+                        "includeCompanyName": false,
+                        "logOutLabel": "Log Out",
+                        "loginLinkText": "Log In",
+                        "loginLinkTextDecoration": "{\"underline\":true}",
+                        "loginLinkTextOrientation": "leftOfIcon",
+                        "menuStyle": "iconAndName",
+                        "userNameTextOrientation": "leftOfIcon",
+                        "userProfileMenuNavigationMenuEditor": "Default_User_Profile_Menu7"
+                      },
+                      "definition": "commerce_builder:userProfileMenu",
+                      "id": "18b45da1-61ac-42e7-8240-e6337273ee99",
+                      "type": "component"
+                    },
+                    {
+                      "attributes": {
+                        "checkoutButtonSize": "standard",
+                        "checkoutButtonText": "Checkout",
+                        "continueShoppingButtonSize": "standard",
+                        "continueShoppingButtonText": "Continue Shopping",
+                        "countType": "TotalProductCount",
+                        "headerText": "My Cart",
+                        "paymentMethodSetId": "",
+                        "recommendationHeaderText": "You May Also Like",
+                        "recommendationPriceDisplayType": "displayAllPrices",
+                        "showContinueShoppingButton": true,
+                        "showCount": true,
+                        "showExpressCheckoutButton": false,
+                        "showMiniCart": false,
+                        "showMiniCartProperties": true,
+                        "showRecommendation": false,
+                        "showViewCartButton": true,
+                        "useManualCapture": true,
+                        "viewCartButtonSize": "standard",
+                        "viewCartButtonText": "View Cart"
+                      },
+                      "definition": "commerce_builder:cartBadge",
+                      "id": "ac9b39fa-9b6b-47bb-a0f9-66a3e6a8beec",
+                      "type": "component"
+                    }
+                  ],
+                  "id": "3d2e724f-6cb2-4c5c-a181-ce3c06a4453d",
+                  "name": "icons",
+                  "title": "Icons",
+                  "type": "region"
+                }
+              ],
+              "definition": "commerce_builder:layoutHeaderOne",
+              "id": "c23389e0-b6c0-4618-a91e-1a56aca3ce26",
+              "type": "component"
+            }
+          ],
+          "id": "2923a436-46a1-41ed-9d77-c6dd0aff46ee",
+          "name": "header",
+          "title": "Header",
+          "type": "region"
+        },
+        {
+          "children": [
+            {
+              "attributes": {
+                "acceptButtonText": "Accept",
+                "excludedPages": "Privacy_Policy\nTerms_And_Conditions",
+                "rejectButtonText": "Reject"
+              },
+              "children": [
+                {
+                  "children": [
+                    {
+                      "attributes": {
+                        "imageInfos": "",
+                        "richTextValue": "<p style=\"text-align: center;\"><strong style=\"font-size: 18px;\">Cookie Consent</strong></p><p style=\"text-align: center;\"><br></p><p style=\"text-align: center;\">Your cookie consent policy lives <a href=\"{!Site.basePath}/privacy-policy\" rel=\"noopener noreferrer\" target=\"_blank\"><strong>here</strong></a>. Replace the place holder property with your own.</p>"
+                      },
+                      "definition": "community_builder:richTextEditor",
+                      "id": "ba538aba-077a-4db3-ba24-8cb7596227a6",
+                      "type": "component"
+                    }
+                  ],
+                  "id": "07832f59-b45a-47a1-bb3b-841534e3c043",
+                  "name": "content",
+                  "title": "Content",
+                  "type": "region"
+                }
+              ],
+              "definition": "commerce_builder:consentBlanket",
+              "id": "c28aedb6-4305-4d0a-998c-02e8fe6e9a91",
+              "type": "component"
+            },
+            {
+              "attributes": {
+                "backgroundImageConfig": "",
+                "backgroundImageOverlay": "rgba(0,0,0,0)",
+                "componentSpacerSize": "",
+                "dxpStyle": {
+                  "padding": {
+                    "bottom": "0%",
+                    "left": "29.5%",
+                    "right": "29.5%",
+                    "top": "3%"
+                  }
+                },
+                "layoutDirectionDesktop": "row",
+                "layoutDirectionMobile": "column",
+                "layoutDirectionTablet": "column",
+                "maxContentWidth": "560px",
+                "sectionColumnGutterWidth": "",
+                "sectionConfig": "{\"UUID\":\"613e5ee1-4dd0-4983-9cba-ba766ed026f3\",\"columns\":[{\"UUID\":\"15d363d8-9f3b-439c-b4d2-54207baa13e2\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":null}]}",
+                "sectionMinHeight": "",
+                "sectionVerticalAlign": "flex-start"
+              },
+              "children": [
+                {
+                  "children": [
+                    {
+                      "attributes": {
+                        "buttonText": "Subscribe",
+                        "dxp:dataProviders": [
+                          {
+                            "componentAttributes": {
+                              "consentExperience": "EmailCaptureComponent",
+                              "contactFromUserContext": false,
+                              "sfdcExpressionKey": "Marketing"
+                            },
+                            "componentName": "commerce_data_provider:marketingConsentDataProvider",
+                            "expressionKey": "Marketing"
+                          }
+                        ],
+                        "dxpStyle": {
+                          "padding": {
+                            "bottom": "3rem",
+                            "left": "0rem",
+                            "right": "0rem",
+                            "top": "0rem"
+                          }
+                        },
+                        "inputFieldLabel": "Email Address",
+                        "placeholderText": "Enter your email address",
+                        "subscriptions": "{!Marketing.Subscriptions.communications}",
+                        "successMessage": "Thank you for signing up!"
+                      },
+                      "children": [
+                        {
+                          "children": [
+                            {
+                              "attributes": {
+                                "backgroundColor": "",
+                                "isLinkable": false,
+                                "linkAssistiveText": "",
+                                "paddingHorizontal": "none",
+                                "paddingVertical": "none",
+                                "text": "Sign Up to Stay Updated",
+                                "textAlign": "left",
+                                "textDecoration": "{\"bold\": true}",
+                                "textDisplayInfo": "{\"headingTag\": \"h4\", \"textStyle\": \"heading-small\"}"
+                              },
+                              "definition": "dxp_base:textBlock",
+                              "id": "fe49bca0-e30c-4853-93ed-f261c11b557d",
+                              "type": "component"
+                            },
+                            {
+                              "attributes": {
+                                "backgroundColor": "",
+                                "isLinkable": false,
+                                "linkAssistiveText": "",
+                                "paddingHorizontal": "none",
+                                "paddingVertical": "none",
+                                "text": "Sign up now and be the first to know about latest offers, news, tips, and more.",
+                                "textAlign": "left",
+                                "textDecoration": "{}",
+                                "textDisplayInfo": "{\"headingTag\": \"p\", \"textStyle\": \"body-regular\"}"
+                              },
+                              "definition": "dxp_base:textBlock",
+                              "id": "c7a0be75-fe11-48d5-a6ef-86af31e793d9",
+                              "type": "component"
+                            }
+                          ],
+                          "id": "8c352f6a-3f55-40ee-a963-b3b342f0262c",
+                          "name": "header",
+                          "title": "header",
+                          "type": "region"
+                        },
+                        {
+                          "children": [
+                            {
+                              "attributes": {
+                                "imageInfos": "",
+                                "richTextValue": "<p>By submitting this, I agree to the <u><a href=\"{!Site.basePath}/terms-and-conditions\" rel=\"noopener noreferrer\" target=\"_blank\">Terms & Conditions</a></u> and <u><a href=\"{!Site.basePath}/privacy-policy\" rel=\"noopener noreferrer\" target=\"_blank\">Privacy Policy</a></u>.</p>"
+                              },
+                              "definition": "community_builder:richTextEditor",
+                              "id": "c7ab79a8-79e6-41dd-8894-683f11aaa052",
+                              "type": "component"
+                            }
+                          ],
+                          "id": "48decbef-b36c-4f63-a415-b18f1ea913a5",
+                          "name": "footer",
+                          "title": "footer",
+                          "type": "region"
+                        }
+                      ],
+                      "definition": "commerce_builder:marketingEmailSignup",
+                      "id": "3ad3da7d-2c5a-4c72-81e0-7b8b34ed7587",
+                      "type": "component"
+                    }
+                  ],
+                  "id": "15d363d8-9f3b-439c-b4d2-54207baa13e2",
+                  "name": "col1",
+                  "title": "Column 1",
+                  "type": "region"
+                }
+              ],
+              "definition": "community_layout:section",
+              "id": "613e5ee1-4dd0-4983-9cba-ba766ed026f3",
+              "scopedBrandingSetId": "B2B_Footer",
+              "type": "component"
+            },
+            {
+              "attributes": {
+                "backgroundImageConfig": "",
+                "backgroundImageOverlay": "rgba(0,0,0,0)",
+                "componentSpacerSize": "",
+                "dxpStyle": {
+                  "padding": {
+                    "bottom": "1%",
+                    "left": "8%",
+                    "right": "8%",
+                    "top": "1%"
+                  }
+                },
+                "layoutDirectionDesktop": "row",
+                "layoutDirectionMobile": "column",
+                "layoutDirectionTablet": "row",
+                "maxContentWidth": "",
+                "sectionColumnGutterWidth": "",
+                "sectionConfig": "{\"UUID\":\"3b6ecb5d-f041-4c1d-a48c-38552d9ee45d\",\"columns\":[{\"UUID\":\"b74eb71a-fbcf-49e3-b093-a1f7a0ea3ebb\",\"columnName\":\"Column 1\",\"columnKey\":\"commerce_linklist_ourcompany\",\"columnWidth\":\"3\",\"seedComponents\":null},{\"UUID\":\"ada9dd35-e4d4-4b93-98ff-d8f287059a18\",\"columnName\":\"Column 2\",\"columnKey\":\"commerce_linklist_gethelp\",\"columnWidth\":\"3\",\"seedComponents\":null},{\"UUID\":\"16c68e0b-5232-44de-ba50-7ea2227b962c\",\"columnName\":\"Column 3\",\"columnKey\":\"commerce_linklist_account\",\"columnWidth\":\"3\",\"seedComponents\":null},{\"UUID\":\"1a3eb040-39c2-461a-baf1-f86bff6df64a\",\"columnName\":\"Column 4\",\"columnKey\":\"col4\",\"columnWidth\":\"3\",\"seedComponents\":null}]}",
+                "sectionMinHeight": "",
+                "sectionVerticalAlign": "flex-start"
+              },
+              "children": [
+                {
+                  "children": [
+                    {
+                      "attributes": {
+                        "linkSpacing": "small",
+                        "maxDepth": "1",
+                        "menuEditor": "Default_Our_Company_Menu7",
+                        "textAlign": "left",
+                        "textDecoration": "{}",
+                        "textDisplayInfo": "{\"textStyle\": \"body-regular\"}"
+                      },
+                      "children": [
+                        {
+                          "children": [
+                            {
+                              "attributes": {
+                                "backgroundColor": "",
+                                "isLinkable": false,
+                                "linkAssistiveText": "",
+                                "paddingHorizontal": "none",
+                                "paddingVertical": "none",
+                                "text": "Our Company",
+                                "textAlign": "left",
+                                "textDecoration": "{\"bold\": true}",
+                                "textDisplayInfo": "{\"textStyle\": \"heading-small\"}"
+                              },
+                              "definition": "dxp_base:textBlock",
+                              "id": "73c7f8a8-8d53-41a5-81db-ff6ed9479242",
+                              "type": "component"
+                            }
+                          ],
+                          "id": "859cc321-ed87-4e4f-aeac-469400b94dec",
+                          "name": "header",
+                          "title": "Header",
+                          "type": "region"
+                        }
+                      ],
+                      "definition": "commerce_builder:linkList",
+                      "id": "844936e4-210b-4b93-88d0-0cfdbe04faae",
+                      "type": "component"
+                    }
+                  ],
+                  "id": "b74eb71a-fbcf-49e3-b093-a1f7a0ea3ebb",
+                  "name": "commerce_linklist_ourcompany",
+                  "title": "commerce_linklist_ourcompany",
+                  "type": "region"
+                },
+                {
+                  "children": [
+                    {
+                      "attributes": {
+                        "linkSpacing": "small",
+                        "maxDepth": "1",
+                        "menuEditor": "Default_Get_Help_Menu7",
+                        "textAlign": "left",
+                        "textDecoration": "{}",
+                        "textDisplayInfo": "{\"textStyle\": \"body-regular\"}"
+                      },
+                      "children": [
+                        {
+                          "children": [
+                            {
+                              "attributes": {
+                                "backgroundColor": "",
+                                "isLinkable": false,
+                                "linkAssistiveText": "",
+                                "paddingHorizontal": "none",
+                                "paddingVertical": "none",
+                                "text": "Get Help",
+                                "textAlign": "left",
+                                "textDecoration": "{\"bold\": true}",
+                                "textDisplayInfo": "{\"textStyle\": \"heading-small\"}"
+                              },
+                              "definition": "dxp_base:textBlock",
+                              "id": "535b7440-2e62-4368-b49c-bcbadec21226",
+                              "type": "component"
+                            }
+                          ],
+                          "id": "c4808f67-284d-48c3-9b60-60c7fc81bd8d",
+                          "name": "header",
+                          "title": "Header",
+                          "type": "region"
+                        }
+                      ],
+                      "definition": "commerce_builder:linkList",
+                      "id": "e2427010-07e0-4a78-92fb-05fcaf71c1cb",
+                      "type": "component"
+                    }
+                  ],
+                  "id": "ada9dd35-e4d4-4b93-98ff-d8f287059a18",
+                  "name": "commerce_linklist_gethelp",
+                  "title": "commerce_linklist_gethelp",
+                  "type": "region"
+                },
+                {
+                  "children": [
+                    {
+                      "attributes": {
+                        "linkSpacing": "small",
+                        "maxDepth": "1",
+                        "menuEditor": "Default_My_Account_Menu7",
+                        "textAlign": "left",
+                        "textDecoration": "{}",
+                        "textDisplayInfo": "{\"textStyle\": \"body-regular\"}"
+                      },
+                      "children": [
+                        {
+                          "children": [
+                            {
+                              "attributes": {
+                                "backgroundColor": "",
+                                "isLinkable": false,
+                                "linkAssistiveText": "",
+                                "paddingHorizontal": "none",
+                                "paddingVertical": "none",
+                                "text": "Account",
+                                "textAlign": "left",
+                                "textDecoration": "{\"bold\": true}",
+                                "textDisplayInfo": "{\"textStyle\": \"heading-small\"}"
+                              },
+                              "definition": "dxp_base:textBlock",
+                              "id": "4f94219d-2ec8-42ab-a841-1cab9696864c",
+                              "type": "component"
+                            }
+                          ],
+                          "id": "e22d9056-9350-4441-be78-9a84bcdd692d",
+                          "name": "header",
+                          "title": "Header",
+                          "type": "region"
+                        }
+                      ],
+                      "definition": "commerce_builder:linkList",
+                      "id": "1c89ccf0-c229-4334-bd4c-509577144302",
+                      "type": "component"
+                    }
+                  ],
+                  "id": "16c68e0b-5232-44de-ba50-7ea2227b962c",
+                  "name": "commerce_linklist_account",
+                  "title": "commerce_linklist_account",
+                  "type": "region"
+                },
+                {
+                  "children": [
+                    {
+                      "attributes": {
+                        "flexAlignment": "flex-end",
+                        "menuName": "Default_Social_Media_Menu7",
+                        "orientation": "horizontal"
+                      },
+                      "definition": "commerce_builder:socialLinks",
+                      "id": "e8d4a178-8a4d-4860-ad85-bfbce5f0e7f0",
+                      "type": "component"
+                    },
+                    {
+                      "attributes": {
+                        "countries": "{!Markets.Countries}",
+                        "countryTextAlignment": "left",
+                        "dxp:dataProviders": [
+                          {
+                            "componentAttributes": {
+                              "sfdcExpressionKey": "Markets"
+                            },
+                            "componentName": "commerce_data_provider:marketsDataProvider",
+                            "expressionKey": "Markets"
+                          }
+                        ],
+                        "dxpStyle": {
+                          "padding": {
+                            "bottom": "16px",
+                            "left": "0px",
+                            "right": "0px",
+                            "top": "16px"
+                          }
+                        },
+                        "headingLabelText": "Select Your Location",
+                        "headingPaddingVertical": "none",
+                        "headingTextAlignment": "center",
+                        "headingTextDisplayInfo": "{\"textStyle\": \"heading-large\", \"headingTag\": \"h2\"}",
+                        "languageDisplayType": "short",
+                        "languages": "{!Markets.Languages}",
+                        "markets": "{!Markets.Items}",
+                        "pickerButtonAlignment": "right",
+                        "pickerButtonLabelText": "",
+                        "pickerButtonSize": "standard",
+                        "pickerButtonStyle": "secondary",
+                        "showGlobeIcon": true,
+                        "sort": "country"
+                      },
+                      "definition": "commerce_builder:countryPickerV2",
+                      "id": "fd5af161-ce5b-41b8-9bda-596a08aeaebd",
+                      "type": "component"
+                    }
+                  ],
+                  "id": "1a3eb040-39c2-461a-baf1-f86bff6df64a",
+                  "name": "col4",
+                  "title": "Column 4",
+                  "type": "region"
+                }
+              ],
+              "definition": "community_layout:section",
+              "id": "3b6ecb5d-f041-4c1d-a48c-38552d9ee45d",
+              "scopedBrandingSetId": "B2B_Footer",
+              "type": "component"
+            },
+            {
+              "attributes": {
+                "backgroundImageConfig": "",
+                "backgroundImageOverlay": "rgba(0,0,0,0)",
+                "componentSpacerSize": "",
+                "dxpStyle": {
+                  "padding": {
+                    "bottom": "1%",
+                    "left": "8%",
+                    "right": "8%",
+                    "top": "1%"
+                  }
+                },
+                "layoutDirectionDesktop": "row",
+                "layoutDirectionMobile": "column",
+                "layoutDirectionTablet": "column",
+                "maxContentWidth": "",
+                "sectionColumnGutterWidth": "",
+                "sectionConfig": "{\"UUID\":\"4717e878-d69e-43ce-8018-e8b9a544a6b9\",\"columns\":[{\"UUID\":\"6b247939-d761-4a1f-9a50-4a24c8c7526c\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":null}]}",
+                "sectionMinHeight": "",
+                "sectionVerticalAlign": "flex-start"
+              },
+              "children": [
+                {
+                  "children": [
+                    {
+                      "attributes": {
+                        "alignment": "center",
+                        "lineStyle": "solid",
+                        "size": 1,
+                        "width": 100
+                      },
+                      "definition": "dxp_base:horizontalLine",
+                      "id": "3f88b30e-018e-4c66-889e-62a6be052c50",
+                      "type": "component"
+                    }
+                  ],
+                  "id": "6b247939-d761-4a1f-9a50-4a24c8c7526c",
+                  "name": "col1",
+                  "title": "Column 1",
+                  "type": "region"
+                }
+              ],
+              "definition": "community_layout:section",
+              "id": "4717e878-d69e-43ce-8018-e8b9a544a6b9",
+              "scopedBrandingSetId": "B2B_Footer",
+              "type": "component"
+            },
+            {
+              "attributes": {
+                "backgroundImageConfig": "",
+                "backgroundImageOverlay": "rgba(0,0,0,0)",
+                "componentSpacerSize": "",
+                "dxpStyle": {
+                  "padding": {
+                    "bottom": "3%",
+                    "left": "8%",
+                    "right": "8%",
+                    "top": "1%"
+                  }
+                },
+                "layoutDirectionDesktop": "row",
+                "layoutDirectionMobile": "column",
+                "layoutDirectionTablet": "column",
+                "maxContentWidth": "",
+                "sectionColumnGutterWidth": "",
+                "sectionConfig": "{\"UUID\":\"2dba960e-ed19-47dd-8cc0-6bde436575d2\",\"columns\":[{\"UUID\":\"b79264b8-2a0f-475f-bc30-a1c9e1989bf3\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":null}]}",
+                "sectionMinHeight": "",
+                "sectionVerticalAlign": "flex-start"
+              },
+              "children": [
+                {
+                  "children": [
+                    {
+                      "attributes": {
+                        "alignment": "left",
+                        "imageInfo": "",
+                        "imageInfoMobile": "",
+                        "logoWidth": 250
+                      },
+                      "definition": "dxp_content_layout:siteLogo",
+                      "id": "3da2d76d-672c-4cef-835c-c0b0d4139394",
+                      "type": "component"
+                    }
+                  ],
+                  "id": "b79264b8-2a0f-475f-bc30-a1c9e1989bf3",
+                  "name": "col1",
+                  "title": "Column 1",
+                  "type": "region"
+                }
+              ],
+              "definition": "community_layout:section",
+              "id": "2dba960e-ed19-47dd-8cc0-6bde436575d2",
+              "scopedBrandingSetId": "B2B_Footer",
+              "type": "component"
+            }
+          ],
+          "id": "a625e7a6-6a5e-4a72-baef-6aeae839158f",
+          "name": "footer",
+          "title": "Footer",
+          "type": "region"
+        }
+      ],
+      "definition": "commerce:layoutSite",
+      "id": "1b9ca167-0170-4c5a-b42a-21730159146c",
+      "type": "component"
+    }
+  },
+  "urlName": "commerce-layout"
+}

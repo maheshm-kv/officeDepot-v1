@@ -1,0 +1,30 @@
+{
+  "type": "sfdc_cms__view",
+  "title": "Split Shipment",
+  "contentBody": {
+    "component": {
+      "children": [
+        {
+          "attributes": {
+            "dxpStyle": {
+              "margin": {
+                "bottom": "0px",
+                "left": "0px",
+                "right": "0px",
+                "top": "0px"
+              },
+              "padding": {
+                "bottom": "0px",
+                "left": "0px",
+                "right": "0px",
+                "top": "0px"
+              }
+            }
+          },
+          "id": "0e00f485-b3a3-4212-bc5c-a2252a0445be"
+        }
+      ]
+    }
+  },
+  "urlName": "split-shipment"
+}

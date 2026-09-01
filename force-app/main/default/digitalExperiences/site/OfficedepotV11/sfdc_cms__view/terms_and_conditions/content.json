@@ -1,0 +1,114 @@
+{
+  "type": "sfdc_cms__view",
+  "title": "Terms And Conditions",
+  "contentBody": {
+    "component": {
+      "children": [
+        {
+          "children": [
+            {
+              "attributes": {
+                "backgroundImageConfig": "",
+                "backgroundImageOverlay": "rgba(0,0,0,0)",
+                "componentSpacerSize": "",
+                "layoutDirectionDesktop": "row",
+                "layoutDirectionMobile": "column",
+                "layoutDirectionTablet": "column",
+                "maxContentWidth": "",
+                "sectionColumnGutterWidth": "",
+                "sectionConfig": "{\"UUID\":\"ce5949ca-b55d-419d-aaa6-77bdba6f3cc0\",\"columns\":[{\"UUID\":\"dada061e-30fb-48a6-bc4a-db20b8315210\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":null}]}",
+                "sectionMinHeight": "",
+                "sectionVerticalAlign": "flex-start"
+              },
+              "children": [
+                {
+                  "children": [
+                    {
+                      "attributes": {
+                        "backgroundColor": "",
+                        "isLinkable": false,
+                        "linkAssistiveText": "",
+                        "paddingHorizontal": "none",
+                        "paddingVertical": "large",
+                        "text": "Terms and Conditions",
+                        "textAlign": "left",
+                        "textDecoration": "{}",
+                        "textDisplayInfo": "{\"textStyle\":\"heading-xlarge\",\"headingTag\":\"h1\",\"enableOverride\":false}"
+                      },
+                      "definition": "dxp_base:textBlock",
+                      "id": "5dea793a-6be3-4c1e-85da-136d0459838e",
+                      "type": "component"
+                    },
+                    {
+                      "attributes": {
+                        "dxpStyle": {
+                          "padding": {
+                            "bottom": "2rem",
+                            "left": "0rem",
+                            "right": "0rem",
+                            "top": "1rem"
+                          }
+                        },
+                        "imageInfos": "",
+                        "richTextValue": "<p>Effective Date: [Policy Effective Date]</p>"
+                      },
+                      "definition": "community_builder:richTextEditor",
+                      "id": "1e55b9f2-0a72-48eb-9e92-700d6de0d067",
+                      "type": "component"
+                    },
+                    {
+                      "attributes": {
+                        "imageInfos": "",
+                        "richTextValue": "<p>Disclaimer: This is an automatically generated space intended as a starting point to help you add terms and conditions for the use of your site and services. You are responsible for the accuracy and compliance of any such terms with all applicable laws and regulations.</p>"
+                      },
+                      "definition": "community_builder:richTextEditor",
+                      "id": "0bb23ebf-7f89-4631-b41b-35a644823481",
+                      "type": "component"
+                    }
+                  ],
+                  "id": "dada061e-30fb-48a6-bc4a-db20b8315210",
+                  "name": "col1",
+                  "title": "Column 1",
+                  "type": "region"
+                }
+              ],
+              "definition": "community_layout:section",
+              "id": "ce5949ca-b55d-419d-aaa6-77bdba6f3cc0",
+              "type": "component"
+            }
+          ],
+          "id": "9974e906-81d0-4688-aed5-86c418ac3622",
+          "name": "content",
+          "title": "Content",
+          "type": "region"
+        },
+        {
+          "children": [
+            {
+              "attributes": {
+                "customHeadTags": "",
+                "description": "",
+                "pageTitle": "Terms And Conditions",
+                "recordId": "{!recordId}"
+              },
+              "definition": "community_builder:seoAssistant",
+              "id": "99bee7f4-24a8-4534-bb0b-ddfdd7cc93d0",
+              "type": "component"
+            }
+          ],
+          "id": "076b989d-22ea-4b23-bf1d-972f6f62ad4e",
+          "name": "sfdcHiddenRegion",
+          "title": "sfdcHiddenRegion",
+          "type": "region"
+        }
+      ],
+      "definition": "community_layout:sldsFlexibleLayout",
+      "id": "4952fcd9-410b-401a-b0d2-1263158ca4cf",
+      "type": "component"
+    },
+    "dataProviders": [],
+    "themeLayoutType": "Inner",
+    "viewType": "terms-and-conditions"
+  },
+  "urlName": "terms-and-conditions"
+}

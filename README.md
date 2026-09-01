@@ -11,7 +11,7 @@ Before you start, make sure you have:
 - **Salesforce CLI** - Download from [developer.salesforce.com/tools/salesforcecli](https://developer.salesforce.com/tools/salesforcecli). See [Install Salesforce CLI](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_install_cli.htm) for details.
 - **VS Code with Salesforce Extension Pack** - See [Installation Instructions](https://developer.salesforce.com/docs/platform/sfvscode-extensions/guide/install.html) for details. Includes the Agentforce Vibes extension.
 - **A development org** - Sign up for a free Developer Edition org [here](https://developer.salesforce.com/signup).
-- **Dev Hub enabled** (optional, required to create scratch orgs) - You can enable Dev Hub in your development org under Setup > Dev Hub.  See [Provide Developers Access to Salesforce DX Tools](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_setup_dx_tools.htm).
+- **Dev Hub enabled** (optional, required to create scratch orgs) - You can enable Dev Hub in your development org under Setup > Dev Hub. See [Provide Developers Access to Salesforce DX Tools](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_setup_dx_tools.htm).
 
 ## Project Structure
 
@@ -47,6 +47,18 @@ Here are common CLI commands that you'll use the most:
 
 Transform your ideas into custom Lightning apps that extend CRM workflows directly in Lightning Experience. Through natural conversations with Agentforce Vibes, implement custom objects and fields, complex business logic, and dynamic UI components. See [Build a Lightning App Using Agentforce Vibes](https://developer.salesforce.com/docs/platform/einstein-for-devs/guide/lexapp-overview.html).
 
+## Login & Forgot-Password Page Setup (Experience Builder)
+
+After deploying this package to the org:
+
+1. In Setup, go to **Digital Experiences → All Sites**, click **Builder** on the Office Depot Negocios site.
+2. In Experience Builder, create (or reuse) a page for login and drag the `b2bLoginForm` component onto it. Create/reuse a page for forgot-password and drag `b2bForgotPassword` onto it.
+3. Publish the site so both pages have live URLs.
+4. In Setup, go to **Digital Experiences → Administration → [Site Name] → Login & Registration**.
+5. Under **Login Page**, choose **Custom** and select the Experience Builder page created in step 2 that hosts `b2bLoginForm`.
+6. Under **Forgot Password Page** (or equivalent setting for this Salesforce release), select the page hosting `b2bForgotPassword`.
+7. Save, then verify by visiting the site's login URL in an incognito window — confirm the custom page renders and a login attempt round-trips through `B2BLoginController.login`.
+
 ## Additional Resources
 
 - [Agentforce Vibes Developer Guide](https://developer.salesforce.com/docs/platform/einstein-for-devs/guide/einstein-overview.html)
@@ -55,4 +67,3 @@ Transform your ideas into custom Lightning apps that extend CRM workflows direct
 - [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/)
 - [Salesforce CLI Plugin Development Guide](https://developer.salesforce.com/docs/platform/salesforce-cli-plugin/guide/conceptual-overview.html)
 - [Salesforce VS Code Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-

@@ -1,190 +1,205 @@
-# officeDepotv1 Engineering Constitution
+# External Punchout Engineering Constitution
 Version: 1.0.0
 
-This document is the supreme engineering authority for the officeDepotv1 project. All code, architecture, and infrastructure decisions must comply with these rules.
+This document is the supreme engineering authority for the External Punchout project. All code, architecture, and infrastructure decisions must comply with these rules.
 
 ## Mission
-To build a secure, scalable, and enterprise-grade Salesforce B2B Commerce Proof of Concept (PoC) for Office Depot. The solution will validate core B2B purchasing workflows, enterprise integrations, and Salesforce data model prerequisites using an Out-Of-The-Box (OOTB)-first approach, falling back to Flows, Commerce Extensions, Apex, and LWC only when strictly required.
+To successfully connect an external procurement system to Salesforce B2B Commerce via a cXML PunchOut integration Proof of Concept (PoC). The integration must seamlessly execute the following workflow:
+1. Initiate a PunchOut session from an external procurement system.
+2. Receive and parse a cXML PunchOut request in Salesforce B2B Commerce.
+3. Authenticate and redirect the customer automatically to the storefront without manual login.
+4. Transfer selected products to the storefront via the PunchOut workflow.
+5. Automatically add selected products to the customer's cart in Salesforce B2B Commerce.
+6. Allow the customer to review and adjust cart quantities.
+7. Return the finalized cart contents to the external procurement system via the appropriate cXML PunchOut workflow.
 
 ## Core Values
-1. **Correctness over speed**
-2. **Security over convenience**
-3. **Simplicity over cleverness**
-4. **Maintainability over shortcuts**
-5. **Observability over assumptions**
-6. **Explicitness over magic**
-7. **Automation over manual processes**
-8. **Testing over trust**
+1. **Correctness over speed**: The cXML payload parsing and cart generation must be perfectly accurate.
+2. **Security over convenience**: PunchOut authentication must be strictly validated.
+3. **Simplicity over cleverness**: Keep the PoC architecture straightforward.
+4. **Maintainability over shortcuts**: Write clean, documented Apex and LWC code.
+5. **Observability over assumptions**: Log all incoming and outgoing cXML payloads.
+6. **Explicitness over magic**: Clearly map cXML nodes to Salesforce B2B Cart objects.
+7. **Automation over manual processes**: Automate testing and deployment validations.
+8. **Testing over trust**: Prove the integration works via automated tests before manual QA.
 
 ## Technology Stack
 
-*Assumption Note: The user prompt listed Salesforce technologies (Apex, LWC, etc.) in both the "Compliance/Primary Languages" and "Forbidden" fields. This constitution assumes a data entry error and strictly requires these technologies, forbidding custom alternatives where Salesforce native solutions exist.*
+*(Assumption: As the primary languages are Salesforce, Apex, and LWC, the project shape is defined as a Salesforce DX (SFDX) application.)*
 
-| Category | Technology |
-| :--- | :--- |
-| **Platform** | Salesforce B2B Commerce (Lightning Web Runtime - LWR) |
-| **Backend** | Apex, SOQL, SOSL, Triggers, Salesforce Flows |
-| **Frontend** | Lightning Web Components (LWC) |
-| **Integrations** | Salesforce REST/SOAP APIs, Commerce Extensions |
-| **Tooling** | Salesforce CLI (SFDX), PMD, ESLint, Jest |
+### Required Technologies
+| Category | Technology | Purpose |
+| :--- | :--- | :--- |
+| **Platform** | Salesforce B2B Commerce | Core e-commerce engine and cart management |
+| **Backend** | Apex | cXML parsing, REST endpoints, ConnectApi cart operations |
+| **Frontend** | Lightning Web Components (LWC) | Cart review and quantity adjustment UI |
+| **Integration** | cXML (Commerce eXtensible Markup Language) | Standard protocol for PunchOut communication |
+| **Tooling** | Salesforce CLI (SFDX) | Source control and deployment management |
 
-**Required Practices:**
-*   OOTB-first approach: Standard B2B Commerce capabilities and configuration must be exhausted before custom development.
-*   Prerequisite validation: Account, Contact, Buyer User, Buyer Groups, Web Store, Catalog, Products, and Pricing must be configured and validated before UI implementation.
-
-**Forbidden Technologies / Practices:**
-*   Plain JavaScript in application code (Use ES6+ / TypeScript standards for LWC).
-*   Unmaintained dependencies or unapproved AppExchange packages.
-*   Experimental libraries in production without approval.
-*   Custom Apex/LWC for functionality natively supported by B2B Commerce OOTB components or Flows.
-
-**Compatibility Targets:**
-*   Current Salesforce Release (API Version aligned across all metadata).
-*   Modern evergreen browsers (Chrome, Edge, Safari, Firefox).
+### Forbidden Technologies & Practices
+*   **Direct DOM Manipulation**: Forbidden in LWC; use standard template directives (`lwc:if`, `for:each`).
+*   **Hardcoded Credentials**: Forbidden; use Salesforce Named Credentials or Auth.Providers for external callouts.
+*   **Synchronous Callouts in Triggers**: Forbidden; use `@future(callout=true)` or Queueable Apex.
+*   **SOQL/DML inside Loops**: Strictly forbidden due to Salesforce Governor Limits.
 
 ## Repository Structure
-The repository must follow the standard Salesforce DX (SFDX) project structure.
+*(Assumption: Using standard Salesforce DX source-driven project structure.)*
 
 ```text
-officeDepotv1/
-├── config/                     # Scratch org definition files
-├── force-app/main/default/     # Primary metadata directory
-│   ├── applications/           # App definitions
-│   ├── classes/                # Apex Classes (Controllers, Services, Selectors)
-│   ├── flexipages/             # Lightning Pages
-│   ├── flows/                  # Salesforce Flows
-│   ├── lwc/                    # Lightning Web Components
-│   ├── objects/                # Custom Objects & Standard Object extensions
-│   ├── permissionsets/         # Permission Sets & Buyer Group mappings
-│   └── triggers/               # Apex Triggers (One per object)
-├── scripts/                    # Apex scripts for data seeding/setup
-└── package.json                # Node dependencies for LWC Jest/ESLint
+external-punchout/
+├── force-app/main/default/
+│   ├── classes/          # Apex controllers, REST resources, cXML parsers
+│   ├── lwc/              # Lightning Web Components for cart review
+│   ├── objects/          # Custom objects (e.g., Integration_Log__c)
+│   ├── permissionsets/   # Security configurations for the PunchOut user
+│   └── staticresources/  # Mock cXML files for testing
+├── config/               # Scratch org definition files
+├── scripts/              # Setup and deployment scripts
+└── sfdx-project.json     # SFDX project configuration
 ```
 
 ## Language/Code Standards
-*   **Apex:** Object-Oriented, strictly bulkified. Follow the separation of concerns pattern (Controllers, Service Layer, Selector Layer, Domain Layer).
-*   **LWC:** ES6+ syntax. Use `@api` for public properties, `@track` only when mutating complex objects/arrays.
-*   **Naming Conventions:**
-    *   Apex Classes: `PascalCase` (e.g., `B2BCartService`).
-    *   Apex Variables/Methods: `camelCase` (e.g., `calculateTaxes`).
-    *   LWC Components: `kebab-case` for files/folders, `camelCase` for JS classes.
-    *   Constants: `UPPER_SNAKE_CASE`.
-    *   Private variables: Prefix with `_`.
-*   **Component/file size limits:** 300 lines target, 500 mandatory refactor.
+
+### General
+*   **Component/File Size**: Target 300 lines; mandatory refactor at 500 lines.
+*   **Naming Conventions**:
+    *   **Apex Classes**: `PascalCase` (e.g., `PunchOutRequestHandler`).
+    *   **Apex Methods/Variables**: `camelCase` (e.g., `parseSetupRequest`).
+    *   **LWC Folders/Files**: `kebab-case` (e.g., `punchout-cart-review`).
+    *   **Constants**: `UPPER_SNAKE_CASE`.
+
+### Apex Standards
+*   **Bulkification**: All Apex code must be written to handle collections of records, even if the PoC currently expects single records.
+*   **Security**: Use `WITH SECURITY_ENFORCED` in SOQL queries or `Schema.sObjectType.Describe` checks before DML.
+*   **Governor Limits**: Code must be optimized to stay well within CPU time, heap size, and SOQL query limits.
+
+### JavaScript / LWC Standards
+*   **Modern JS**: Use ES6+ features (destructuring, arrow functions, async/await).
+*   **Reactivity**: Use `@track` only for objects/arrays where deep tracking is necessary. Use `@api` for public properties.
+*   **Wire Service**: Prefer `@wire` for reading data; use imperative Apex for DML operations (adding to cart, returning cart).
 
 ## Frontend Standards
-*   **UI framework & rendering model:** Lightning Web Components (LWC) deployed on Lightning Web Runtime (LWR) B2B Storefronts.
-*   **State management preference order:**
-    1.  Lightning Data Service (LDS) / Wire Adapters (caching handled by framework).
-    2.  LWC reactive properties (`@api`, `@track`).
-    3.  Session Storage (for ephemeral cart/checkout state if LDS is insufficient).
-*   **Styling approach:** Salesforce Lightning Design System (SLDS).
-    *   *Assumption Note: Overrode the ASDF default of Tailwind CSS, as SLDS is the mandatory, idiomatic styling framework for Salesforce LWC and LWR B2B storefronts.*
+*   **Styling**: Use Salesforce Lightning Design System (SLDS) utility classes. Custom CSS should be strictly minimized.
+*   **Security**: Must comply with Lightning Web Security (LWS) / Locker Service restrictions.
+*   **State Management**: Manage cart state locally in the LWC during review, syncing to the Salesforce backend only on explicit user action (e.g., "Update Cart" or "Checkout").
 
-## Backend / API & Validation Standards
-*   **API response contract:** All `@AuraEnabled` Apex methods must return a standardized wrapper class or throw an `AuraHandledException`.
-    *   *Assumption Note: Overrode the ASDF default `{ success, data, error }` envelope to align with Salesforce Apex-to-LWC idiomatic patterns.*
-    ```java
-    public class ResponseWrapper {
-        @AuraEnabled public Boolean isSuccess;
-        @AuraEnabled public Object data;
-        @AuraEnabled public String errorMessage;
-    }
-    ```
-*   **Input/output validation rules:**
-    1.  Salesforce Validation Rules (SObject level - preferred).
-    2.  Apex custom validation (Service layer).
-    3.  LWC frontend validation (UI layer).
-*   **Validation library:** Salesforce Native Validation (Validation Rules, Apex `addError`).
-    *   *Assumption Note: Overrode the ASDF default of Zod, as Zod cannot be executed within the Salesforce Apex backend.*
+## Backend/API & Validation Standards
+*   **cXML Endpoints**: Expose Apex REST endpoints (`@RestResource`) to receive incoming PunchOut Setup Requests.
+*   **XML Parsing**: Use Salesforce `Dom.Document` and `Dom.XmlNode` for secure XML parsing. Do not attempt to parse XML using string manipulation or Regex.
+*   **Cart Operations**: Use the `ConnectApi` (B2B Commerce API) namespace for adding items to the cart and creating the cart session, ensuring standard B2B pricing and entitlement rules fire.
+*   **Validation**: Validate the `Sender` credentials and `SharedSecret` in the incoming cXML header before processing the payload.
 
 ## Error Handling
-*   **Error categories:** `VALIDATION_ERROR`, `AUTHENTICATION_ERROR`, `AUTHORIZATION_ERROR`, `BUSINESS_ERROR`, `EXTERNAL_SERVICE_ERROR`, `INFRASTRUCTURE_ERROR`, `UNKNOWN_ERROR`.
-*   **Handling:** Apex must catch exceptions, log them to a custom `Error_Log__c` object (or equivalent framework), and throw an `AuraHandledException` to the LWC frontend to prevent exposing system details.
+Errors must be caught, categorized, and handled gracefully without exposing stack traces to the external system or the end user.
+
+| Category | Handling Strategy |
+| :--- | :--- |
+| `AUTHENTICATION_ERROR` | Return 401/403 HTTP status to external system; log attempt. |
+| `VALIDATION_ERROR` | Return 400 HTTP status with cXML `<Status code="400">` response. |
+| `BUSINESS_ERROR` | (e.g., Product not found) Log error, notify user in LWC, do not crash cart. |
+| `EXTERNAL_SERVICE_ERROR` | Retry transient errors; log failure if returning cart to external system fails. |
+| `INFRASTRUCTURE_ERROR` | (e.g., Governor limits) Catch standard exceptions, log, return 500. |
+
+*   **LWC**: Catch imperative Apex errors and display them using `ShowToastEvent`.
+*   **Apex**: Throw `AuraHandledException` for errors intended to be surfaced in LWC.
 
 ## Logging
-*   **Required structured log fields:** `event`, `timestamp`, `requestId` (Salesforce Transaction ID), `userId`, `metadata`.
-*   **Implementation:** Use a centralized Apex logging framework (e.g., writing to `Error_Log__c` via Platform Events to ensure logs are committed even if the main transaction rolls back).
+*(Assumption: Relying on Salesforce native logging and custom objects for persistence, as standard APM tools are not native to Salesforce PoCs.)*
+
+*   **System.debug**: Use for standard execution flow tracking during the PoC.
+*   **Integration Logs**: All inbound and outbound cXML payloads MUST be saved to a custom object (e.g., `Integration_Log__c`) for observability and debugging.
+*   **Required Log Fields** (mapped to custom object fields):
+    *   `Event_Type__c` (e.g., PunchOutSetupRequest, PunchOutOrderMessage)
+    *   `Timestamp__c`
+    *   `Request_Id__c` (Payload ID from cXML)
+    *   `User_Id__c` (Context User)
+    *   `Payload__c` (Full cXML string)
+    *   `Status__c` (Success/Error)
 
 ## Security
-*   **Authentication & authorization location:** Must occur server-side via Salesforce Profiles, Permission Sets, Buyer Groups, and Sharing Rules.
-*   **Secrets handling:** Must use Salesforce Named Credentials or External Credentials for all outbound integrations (OMS, AS400, Oracle, Payment, Tax). Never hardcode tokens or use standard Environment Variables.
-    *   *Assumption Note: Overrode the ASDF default of Environment Variables, as Salesforce requires Named Credentials for secure integration authentication.*
-*   **Dependency policy:** Must pass security scan (PMD/SFDX Scanner), Must pass license review, Must be maintained, Prefer building over adding a dependency when smaller.
-
-## Accessibility
-*   **Accessibility compliance level:** WCAG 2.1 AA (Salesforce standard). All custom LWCs must utilize semantic HTML and SLDS accessibility attributes (ARIA).
-
-## Performance
-*   **Performance budgets:**
-    *   Apex: Zero SOQL/DML inside loops (Strictly enforced).
-    *   Apex: Must adhere to Salesforce Governor Limits (e.g., < 100 SOQL queries per synchronous transaction).
-    *   LWC: Minimize DOM manipulation; rely on LDS caching to reduce server round-trips.
+*   **Authentication Location**: Must occur server-side. The Apex REST endpoint must validate the cXML MAC/Shared Secret before initiating the Salesforce session.
+*   **Secrets Handling**:
+    *   Never commit secrets to version control.
+    *   Use Salesforce **Named Credentials** for outbound callouts to the external procurement system.
+    *   Use **Custom Metadata Types** or **Protected Custom Settings** for storing inbound validation secrets (if not using standard Auth Providers).
+*   **Dependency Policy**:
+    *   Must pass security scan (Salesforce Code Analyzer).
+    *   Prefer building native Apex/LWC over adding managed packages for small utilities.
 
 ## Testing
-*   **Minimum coverage:** 80% minimum overall, 95% for critical business logic (Pricing, Cart, Checkout, Order Creation).
-*   **Required test types:**
-    *   Apex Unit Tests (with `System.runAs` for Buyer User context).
-    *   LWC Jest Tests (Frontend unit testing).
-    *   Integration Tests (Mocking external callouts using `HttpCalloutMock`).
+*(Assumption: Using standard Salesforce testing frameworks: Apex Tests and LWC Jest.)*
+
+*   **Minimum Coverage**: 80% minimum overall, 95% for critical business logic (cXML parsing, authentication, cart creation).
+*   **Required Test Types**:
+    *   **Apex Unit Tests**: Must use `System.runAs()` to test user context. Must use `Test.setMock()` for external callouts.
+    *   **LWC Jest Tests**: Must test component rendering, DOM events, and mocked Apex wire/imperative calls.
+*   **Data Isolation**: Apex tests must use `@isTest(SeeAllData=false)` and generate their own B2B Commerce test data (Products, Pricebooks, Catalogs) using a Test Data Factory.
 
 ## CI/CD
-*   **CI gates per PR:**
-    *   Lint (PMD for Apex, ESLint for LWC).
-    *   Typecheck/Compilation (SFDX metadata validation deployment).
-    *   Unit tests (Apex Tests & LWC Jest).
+Every Pull Request must pass the following automated gates before merge:
+1.  **Lint**: ESLint for JavaScript/LWC.
+2.  **Static Analysis**: PMD for Apex (via Salesforce Code Analyzer).
+3.  **Unit Tests**: Apex tests execution (minimum 80% coverage enforced).
+4.  **LWC Tests**: Jest test execution.
+5.  **Validation Deployment**: Successful `sfdx force:source:deploy --checkonly` to a CI sandbox or scratch org.
 
 ## Documentation
-*   **Code Documentation:** ApexDoc for all public/global classes and methods. JSDoc for LWC JavaScript.
-*   **Architecture Documentation:** Maintain sequence diagrams for all external enterprise integrations (Sales Cloud, OMS, AS400, Oracle RMS/RPM, PunchOut).
-*   **Prerequisite Documentation:** Document the exact Salesforce data setup required to run the PoC (Buyer Groups, Entitlement Policies, Price Books).
+*   **Code Documentation**: Use ApexDoc (`/** ... */`) for all public classes and methods.
+*   **Architecture**: Maintain a Markdown file detailing the cXML node-to-Salesforce object mapping.
+*   **Payload Examples**: Keep sanitized examples of `PunchOutSetupRequest` and `PunchOutOrderMessage` in the repository for reference.
 
 ## Observability
-*   **Observability requirements:** Utilize Salesforce Event Monitoring (if licensed), Debug Logs, and custom integration logging for all callouts to external systems (OMS, Tax, Payment).
+*   Monitor standard Salesforce **Debug Logs** during active development.
+*   Monitor the `Integration_Log__c` custom object for payload inspection and failure tracking.
+*   Use Salesforce **Setup Audit Trail** to track configuration changes.
 
 ## AI Development Rules
-*   **AI-generated code policy:** AI code is UNTRUSTED — must be reviewed, tested, validated before merge.
-*   **Agent restrictions (each without human approval):** May NOT deploy to production, May NOT rotate credentials, May NOT modify infrastructure, May NOT approve pull requests.
+*   **AI-generated code policy**: AI code is UNTRUSTED — must be reviewed, tested, and validated before merge.
+*   **Agent restrictions (each without human approval)**:
+    *   May NOT deploy to production.
+    *   May NOT rotate credentials.
+    *   May NOT modify infrastructure or Salesforce metadata outside of the PR scope.
+    *   May NOT approve pull requests.
 
 ## Prompt / MCP / RAG Standards
-*   **Prompt / MCP / RAG governance:** Prompts version-controlled, documented, tested. Prompt changes require review. MCP integrations least-privilege, auditable, revocable. RAG sources trusted, versioned, source-attributed.
+*   Prompts must be version-controlled, documented, and tested.
+*   Prompt changes require peer review.
+*   MCP integrations must be least-privilege, auditable, and revocable.
+*   RAG sources must be trusted, versioned, and source-attributed.
 
 ## Code Review Standards
-*   **Code review questions every PR must answer:**
-    1.  What changed?
-    2.  Why?
-    3.  Risks?
-    4.  Rollback plan?
-    5.  Testing evidence?
-    6.  *Could this have been done OOTB or with a Flow?* (Salesforce specific).
+Every Pull Request must answer the following questions in its description:
+1.  **What changed?**
+2.  **Why?**
+3.  **Risks?** (e.g., Governor limit impacts, security implications)
+4.  **Rollback plan?**
+5.  **Testing evidence?** (Screenshots of the LWC UI, snippets of successful cXML logs)
 
 ## Git Standards
-*   **Branch & commit conventions:**
-    *   Branches: `feature/*`, `bugfix/*`, `hotfix/*`, `chore/*`.
-    *   Commit types: `feat`, `fix`, `refactor`, `test`, `docs`, `perf`, `chore`.
+*   **Branches**: `feature/*`, `bugfix/*`, `hotfix/*`, `chore/*`
+*   **Commit types**: `feat`, `fix`, `refactor`, `test`, `docs`, `perf`, `chore`
+*   **Merging**: Squash and merge to `main`.
 
 ## Dependency Rules
-*   **Salesforce Packages:** Managed and Unmanaged packages must be vetted for security and governor limit impact before installation in the PoC environment.
+*   Must pass security scan.
+*   Must pass license review.
+*   Must be actively maintained.
+*   Prefer building over adding a dependency when smaller.
 
 ## Definition of Done
-*   Requirements implemented.
-*   Tests written (Apex & Jest).
-*   Tests passing.
-*   Compilation/Validation deployment passing.
-*   Lint passing (PMD & ESLint).
-*   Security review completed (CRUD/FLS enforced in Apex).
-*   Documentation updated.
-*   Accessibility validated.
-*   Performance validated (Governor limits checked).
-*   Code reviewed.
-*   **Salesforce Specific:** Required Profiles, Permission Sets, and Buyer Group mappings updated and documented.
+*   Requirements implemented (All 7 steps of the PunchOut flow function end-to-end).
+*   Tests written and passing (Apex & Jest).
+*   Typecheck/Lint passing.
+*   Security review completed (No hardcoded secrets, SOQL injection risks mitigated).
+*   Documentation updated (cXML mappings documented).
+*   Code reviewed and approved by at least one peer.
 
-## Non-Negotiable Rules (NEVER / ALWAYS)
+## Non-Negotiable Rules
 *   **NEVER** place SOQL queries or DML statements inside `for` loops.
-*   **NEVER** bypass Object and Field-Level Security (CRUD/FLS) in Apex unless explicitly required and documented for a system-level operation (use `WITH SECURITY_ENFORCED`).
-*   **ALWAYS** prefer Salesforce OOTB B2B Commerce configuration, Commerce Extensions, or Flows over custom Apex/LWC.
-*   **ALWAYS** bulkify Apex Triggers and methods to handle collections of records (up to 200).
-*   **ALWAYS** validate Salesforce prerequisites (Account, Contact, Buyer User, Web Store, Catalog) before building custom UI components.
+*   **NEVER** commit plain-text passwords, tokens, or shared secrets to the repository.
+*   **ALWAYS** validate the authentication payload of incoming cXML requests before processing.
+*   **ALWAYS** use `ConnectApi` for B2B cart modifications to ensure platform integrity.
+*   **ALWAYS** bulkify Apex triggers and integration handlers.
 
 ## Amendment Process
 Written proposal → architecture review → team approval → version increment.
